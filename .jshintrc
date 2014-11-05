@@ -1,0 +1,18 @@
+{
+  "browser": true,
+  "undef": true,
+  "immed": true,
+  "trailing": true,
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "Backbone": true,
+    "_": true,
+    "I18n": true,
+
+    "pageflow": true,
+
+    "confirm": true,
+    "alert": true
+  }
+}

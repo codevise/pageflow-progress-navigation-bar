@@ -1,0 +1,525 @@
+$bg-color: #353535;
+$nav-color: #9c9c9c;
+
+$nav-dot-even: #afafaf;
+$nav-dot-odd: #808080;
+
+$nav-button-hr: #6f6f6f;
+
+$nav-active-page: #18d4d6;
+$nav-active-chapter: #099293;
+
+@mixin pageflow-progress-navigation-bar-small-height {
+  @media screen and (max-height: 700px) {
+    @content;
+  }
+}
+
+
+@mixin pageflow-progress-navigation-bar-transparent-background {
+  &:after {
+    height: 100%;
+    background-color: $bg-color;
+    background-image: none;
+    opacity: 0.9;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    content: "";
+  }
+}
+
+@mixin pageflow-progress-navigation-bar-box($margin-top, $right) {
+  visibility: hidden;
+  margin-top: $margin-top;
+  background-color: $bg-color;
+  border: 2px solid $nav-color;
+  position: absolute;
+  right: $right;
+  padding: 15px;
+  height: auto;
+  left: initial;
+}
+
+.hint {
+  position: absolute;
+  top: -1000em;
+  left: -1000em;
+  line-height: 0;
+  height: 0;
+  font-size: 0;
+  color: transparent;
+  border: 0 none;
+}
+.navi_hint {
+  text-align: center;
+  color: #A9A9A9;
+  font-family: "SourceSansPro";
+  font-size: 11px;
+  top: 50%;
+  position: absolute;
+  width: 100%;
+  margin-top: 16px;
+  @include pageflow-progress-navigation-bar-small-height {
+    display: none !important;
+  }
+}
+
+.progress_navigation_bar {
+  @include unselectable;
+  color: $nav-color;
+  width: 17px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+
+  .navigation_button_area {
+    width: 0;
+    right: 30px;
+    border-right: 1px solid transparent;
+    position: absolute;
+    height: 100%;
+    @include transition(0.3s ease);
+    /*overflow: hidden;*/
+
+
+    .navigation_bar_buttons {
+      @include transition(opacity 0.15s ease, right 0.3s ease);
+      right: -120px;
+      opacity: 0;
+      width: 100%;
+      position: absolute;
+
+      @include pageflow-progress-navigation-bar-transparent-background;
+
+      li {
+        height: 11.11%;
+        border-bottom: 1px solid $nav-button-hr;
+        position: relative;
+
+        &.mute {
+          height: 22.22%;
+        }
+
+        > a {
+          height:100%;
+          width: 100%;
+
+          span.button {
+            display: block;
+            margin: -25px auto 0 23px;
+            top: 50%;
+            position: absolute;
+
+            @include pageflow-progress-navigation-bar-small-height {
+              margin: -20px auto 0 23px;
+            }
+          }
+
+          &:hover .navi_hint, &.active .navi_hint {
+            color: #b4c552;
+          }
+        }
+      }
+    }
+  }
+
+  &.hover, &:hover {
+    width: 140px;
+    .navigation_button_area {
+      width: 87px;
+      @include transition(none);
+
+      .navigation_bar_buttons {
+        right: 0;
+        opacity: 1;
+        @include transition(opacity 0.2s ease 0.1s, right 0.3s ease);
+      }
+    }
+  }
+
+  img {
+    border: none;
+  }
+
+  a.navigation_main, a.navigation_top, a.navigation_index {
+    display: none;
+  }
+
+  @include phone {
+    display: none;
+  }
+
+  .navigation_bar_bottom {
+    display: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .scroller:after {
+    content: " ";
+    display: block;
+    height: 150px;
+    @include background-image(linear-gradient(rgba(53, 53, 53, 1) 0, transparent 100%));
+  }
+
+  li {
+    list-style-type: none;
+
+    &[tabindex] {
+      outline: -webkit-focus-ring-color none 0;
+    }
+  }
+
+  a {
+    display: block;
+
+    span {
+      display: block;
+
+      &.hidden {
+        display: inline;
+      }
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  a {
+    @include hover {
+      + div {
+        visibility: visible;
+      }
+    }
+  }
+
+  a:focus + div, .navigation_menu.focused div {
+    visibility: visible;
+  }
+
+  .navigation_dots a {
+    position: relative;
+    outline: none;
+
+    &:focus:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: solid 3px #eee;
+    }
+  }
+
+  .navigation_site_detail {
+
+    color: white;
+    font-size: 1em;
+    line-height: 1.1em;
+    font-family: sourcesanspro;
+
+    @include pageflow-progress-navigation-bar-box(-40px, 30px);
+
+    img {
+      margin-top: 12px;
+    }
+  }
+
+  .navigation_bar_buttons, .navigation_bar_bottom {
+    opacity: 0.9;
+
+    li:last-child a .button {
+      border-bottom: none;
+    }
+  }
+
+  .navigation_menu {
+    a {
+      -webkit-mask-position-y: -4px !important;
+    }
+  }
+
+  .navigation_menu_box {
+    @include pageflow-progress-navigation-bar-box(0, 90px);
+
+    a {
+      @include hover {
+        -webkit-mask-image: none;
+      }
+    }
+
+    p {
+      margin: 0 0 0.5em;
+    }
+  }
+
+  .navigation_share_box {
+    $size: 28px;
+    width: 210px;
+
+    a {
+      float: left;
+      text-decoration: none;
+      padding: 0 15px 0 15px;
+      width: 39px;
+
+      p {
+        font-size: 9px;
+        color: $nav-color;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .button {
+        width: $size;
+        height: $size;
+        margin: auto;
+      }
+    }
+  }
+
+  .navigation_credits_box {
+    font-size: 1em;
+    min-width: 230px;
+    min-height: 4px;
+    font-family: "sourcesanspro";
+
+    a {
+      color: #b4c552;
+    }
+
+    a.legal, a.copy {
+      float: left;
+    }
+  }
+
+  .navigation_menu {
+    @include hover {
+      .navigation_menu_box {
+        visibility: visible;
+      }
+    }
+
+    &:focus, &.open {
+      .navigation_menu_box {
+        visibility: visible;
+      }
+    }
+  }
+
+  &.js {
+    position: absolute;
+    bottom: 0;
+
+    & > .navigation_site_detail {
+      margin-top: 0;
+      width: auto;
+    }
+
+    a.scroll_indicator {
+      height: 30px;
+      width: 35px;
+      right: 25px;
+      background-repeat: no-repeat;
+      background-image: image-url('pageflow/scroll_indicator_sprite.png');
+      background-color: transparent;
+      -webkit-mask-image: none;
+      $normal-offset: -14px;
+      $hover-offset: -115px;
+      $pressed-offset: -64px;
+
+      &.top {
+        top: 145px;
+        $top-offset: -13px;
+        background-position: $top-offset $normal-offset;
+
+        @include hover {
+          background-position: $top-offset $hover-offset;
+        }
+
+        @include pressed {
+          background-position: $top-offset $pressed-offset;
+        }
+      }
+
+      &.bottom {
+        z-index: 1;
+        bottom: 234px;
+        $bottom-offset: -161px;
+        background-position: $bottom-offset $normal-offset;
+
+        @include hover {
+          background-position: $bottom-offset $hover-offset;
+        }
+        @include pressed {
+          background-position: $bottom-offset $pressed-offset;
+        }
+      }
+    }
+
+    .navigation_bar_buttons {
+      top: 0;
+      height: 100%;
+
+      a.navigation_main, a.navigation_top, a.navigation_index {
+        display: block;
+      }
+    }
+
+    .scroller {
+      overflow: hidden;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 30px;
+      max-height: 100%;
+      overflow: hidden;
+      position: absolute;
+
+      @include pageflow-progress-navigation-bar-transparent-background;
+
+      ul {
+        position: absolute;
+        right: 8px;
+        width: 14px;
+        top: 50%;
+        max-height: 100%;
+        @include transform(translate(0, -50%) !important);
+
+        li {
+          position: relative;
+          box-sizing: border-box;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $nav-dot-even;
+          border-bottom: 1px solid $bg-color;
+          box-sizing: border-box;
+
+          &.active {
+            cursor: default;
+            background-color: $nav-active-page;
+
+
+            img {
+              border-left: 5px solid #A6D513;
+            }
+          }
+        }
+
+        li.chapter_odd a {
+          background-color: $nav-dot-odd;
+
+          &.active {
+            background-color: $nav-active-page;
+          }
+        }
+
+        img {
+          display: block;
+        }
+      }
+    }
+
+    .navigation_menu_box {
+      &:before {
+        top: auto;
+        bottom: -2px;
+      }
+    }
+
+    .visible {
+      visibility: visible;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .navigation_volume_box {
+      height: 100%;
+
+      .volume-control {
+        height: 100%;
+
+        &:before, &:after, .volume-level:before {
+          background-image: image-url('pageflow/volume_control_sprite_progressbar.png');
+          position: absolute;
+          width: 28px;
+          height: 19px;
+          content: " ";
+          background-repeat: no-repeat;
+          top: 8px;
+        }
+
+        &:before {
+          background-position: -34px top;
+          left: 32px;
+          bottom: 6%;
+          top: initial;
+        }
+        &:after {
+          background-position: -3px top;
+          left: 32px;
+          top: 6%;
+        }
+        &:after, &:before {
+          @include pageflow-progress-navigation-bar-small-height {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .volume-control {
+      margin: 0px 20px;
+
+      .volume-slider {
+        width: 5px;
+        height: 60%;
+        background-color: gray;
+        top: 20%;
+        position: absolute;
+        left: 40px;
+
+        @include pageflow-progress-navigation-bar-small-height {
+          top: 10%;
+          height: 80%;
+        }
+      }
+      .volume-level {
+        height: 100%;
+        background-color: #b4c552;
+        bottom: 0;
+        position: absolute;
+
+        &:before {
+          display: block;
+          content: "";
+          background-position: -66px top;
+          top: -9px !important;
+          width: 18px !important;
+          height: 16px !important;
+          left: -6px !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<%= content_tag(:div,
+                class: ["progress_navigation_bar", entry.home_button.enabled? ? 'with_home_button' : nil].compact.join(' '),
+                data: {widget: 'progress_navigation_bar'}) do %>
+
+  <div class="navigation_button_area">
+    <%= render 'pageflow/progress_navigation_bar/widget/bar_top', :entry => entry %>
+  </div>
+  <div class="scroller">
+    <ul class="navigation_dots">
+      <%= render :partial => 'pageflow/progress_navigation_bar/widget/page',
+                 :collection => entry.pages.displayed_in_navigation,
+                 :locals => {:image_style => :navigation_thumbnail_small, :image_width => 85} %>
+    </ul>
+  </div>
+<% end %>

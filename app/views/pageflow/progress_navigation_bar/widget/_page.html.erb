@@ -1,0 +1,9 @@
+<li class="<%= page_navigation_css_class(page) %>">
+  <%= link_to "##{page.perma_id}", :data => {:link => page.id} do %>
+  <% end %>
+  <div class="navigation_site_detail">
+    <%= page.title %>
+
+    <%= image_tag("pageflow/#{page.template}_pictogram.png", :style => "background-image: url('#{page.thumbnail_url(:navigation_thumbnail_large)}')") %>
+  </div>
+</li>

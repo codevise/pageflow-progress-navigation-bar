@@ -1,0 +1,75 @@
+<ul class="navigation_bar_buttons">
+  <li class="menu_li">
+    <a id="navigation" class="navigation_bullet navigation_main" tabindex="2" title="Dachnavigation anzeigen" data-active-title="Dachnavigation schließen">
+      <span class="button"></span>
+      <span class="navi_hint">Navigation</span>
+    </a>
+  </li>
+  <%= render('pageflow/entries/navigation/home_button', home_button: entry.home_button) %>
+  <li>
+    <a class="navigation_bullet navigation_top" <%= "href=##{entry.pages.first.perma_id} data-link=#{entry.pages.first.id}" unless entry.pages.nil? || entry.pages.first.nil? %> tabindex="2" title="Zur ersten Seite">
+      <span class="button"></span>
+      <span class="navi_hint">Erste Seite</span>
+    </a>
+  </li>
+  <li>
+    <a class="navigation_bullet navigation_index" tabindex="2" title="Übersicht anzeigen" data-active-title="Übersicht schließen">
+      <span class="button"></span>
+      <span class="navi_hint">Übersicht</span>
+    </a>
+  </li>
+  <li class="fullscreen">
+    <a class="navigation_bullet navigation_fullscreen" tabindex="2" title="Vollbilddarstellung" data-active-title="Vollbilddarstellung verlassen">
+      <span class="button"></span>
+      <span class="navi_hint">Vollbild</span>
+    </a>
+  </li>
+  <li class="hide_text">
+    <a class="navigation_bullet navigation_hide_text" tabindex="2" title="Text ausblenden" data-active-title="Text wieder einblenden">
+      <span class="button"></span>
+      <span class="navi_hint">Text ausblenden</span>
+    </a>
+  </li>
+  <li class="navigation_menu mute">
+    <div class="navigation_volume_box" title="Lautstärke">
+      <div class="volume-control" style="display: block;">
+        <div class="volume-slider">
+          <div class="volume-level" style="width: 100%;"><span class="volume-control-text"></span></div>
+          <div class="volume-handle" style="left: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="navigation_menu share" tabindex="2">
+    <div class="navigation_menu_box navigation_share_box">
+      <%= link_to "http://www.facebook.com/sharer/sharer.php?s=100&p%5Burl%5D=#{ERB::Util.url_encode(pretty_entry_url(entry))}&p%5Btitle%5D=#{ERB::Util.url_encode(entry.title)}", :target => "_blank", :tabindex => "2", :class => "share facebook" do %>
+          <span class="hint">über facebook teilen</span>
+          <span class="share_facebook button"></span>
+          <p>facebook</p>
+      <% end %>
+      <%= link_to "http://twitter.com/home?status=#{ERB::Util.url_encode(pretty_entry_url(entry))}", :target => "_blank", :tabindex => "2", :class => "share twitter" do %>
+          <span class="hint">über twitter teilen</span>
+          <span class="share_twitter button"></span>
+          <p>twitter</p>
+      <% end %>
+      <%= link_to "https://plus.google.com/share?url=#{ERB::Util.url_encode(pretty_entry_url(entry))}", :target => "_blank", :tabindex => "2", :class => "share google" do %>
+          <span class="hint">über Google+ teilen</span>
+          <span class="share_google button"></span>
+          <p>google</p>
+      <% end %>
+    </div>
+    <a title="Angebot weiterempfehlen">
+      <span class="navigation_bg navigation_share button"></span>
+      <span class="navi_hint">Teilen</span>
+    </a>
+  </li>
+  <li class="navigation_menu" tabindex="2">
+    <div class="navigation_menu_box navigation_credits_box">
+      <%= render 'pageflow/entries/navigation/credits_box_content', :entry => entry %>
+    </div>
+    <a class="navigation_credits_button" title="Impressum">
+      <span class="navigation_bg navigation_credits button"></span>
+      <span class="navi_hint">Impressum</span>
+    </a>
+  </li>
+</ul>
