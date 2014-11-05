@@ -20,12 +20,13 @@
         lastPosition,
         openBarTimeout,
         closeBarTimeout,
-        measuringDistance = 600;
+        measuringDistance = 600,
+        recentPosition;
 
       $('body').on('mousemove', function(e) {
-        var recentPosition = e.pageX;
+        recentPosition = e.pageX;
         var measuredDistance = that.element.offset().left - e.pageX;
-        if(measuredDistance < measuringDistance && !checkingForMouseDelta) {
+        if(measuredDistance < measuringDistance && !checkingForMouseDelta && measuredDistance > 0) {
           checkingForMouseDelta = true;
           lastPosition = e.pageX;
 
