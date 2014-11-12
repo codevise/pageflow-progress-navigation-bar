@@ -1,0 +1,7 @@
+<li class="<%= page_navigation_css_class(list_item) %>">
+  <div class="navigation_site_detail">
+    <%= list_item.title %>
+
+    <%= image_tag("pageflow/#{list_item.template}_pictogram.png", :style => "background-image: url('#{list_item.thumbnail_url(:link_thumbnail_large)}')") %>
+  </div>
+</li>

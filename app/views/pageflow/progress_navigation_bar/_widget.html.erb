@@ -8,8 +8,14 @@
   <div class="scroller">
     <ul class="navigation_dots">
       <%= render :partial => 'pageflow/progress_navigation_bar/widget/page',
-                 :collection => entry.pages.displayed_in_navigation,
-                 :locals => {:image_style => :navigation_thumbnail_small, :image_width => 85} %>
+                 :collection => entry.pages.displayed_in_navigation %>
     </ul>
   </div>
 <% end %>
+  <div class="page_list">
+    <ul>
+      <%= render :partial => 'pageflow/progress_navigation_bar/widget/list_item',
+                 :collection => entry.pages.displayed_in_navigation,
+                 :locals => {:image_style => :link_thumbnail_small} %>
+    </ul>
+  </div>

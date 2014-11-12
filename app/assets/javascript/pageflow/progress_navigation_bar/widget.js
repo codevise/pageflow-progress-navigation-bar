@@ -198,7 +198,7 @@
       });
 
       var resizeDots = function() {
-        var pageDotsMaxHeight = 20,
+        var pageDotsMaxHeight = 30,
         pageDotsMinHeight = 1,
         maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
         wantedHeight = maxBarHeight / pageLinks.length,
