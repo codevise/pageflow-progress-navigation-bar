@@ -2,3 +2,4 @@ de:
   pageflow:
     progress_navigation_bar:
       widget_type_name: "Navigationsleiste mit Fortschrittsbalken"
+      chapter: "Kapitel"

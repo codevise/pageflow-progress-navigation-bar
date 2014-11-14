@@ -1,8 +1,11 @@
 $bg-color: #353535;
 $nav-color: #9c9c9c;
 
+$nav-hint-color: #A9A9A9;
+$nav-hint-hover-color: #b4c552;
+
 $nav-dot-even: #afafaf;
-$nav-dot-odd: #808080;
+$nav-dot-odd: #afafaf;
 
 $nav-button-hr: #6f6f6f;
 
@@ -40,6 +43,11 @@ $nav-active-chapter: #099293;
   padding: 15px;
   height: auto;
   left: initial;
+
+  hr {
+    border:0;
+    border-bottom: 1px solid $nav-color;
+  }
 }
 
 .hint {
@@ -54,13 +62,14 @@ $nav-active-chapter: #099293;
 }
 .navi_hint {
   text-align: center;
-  color: #A9A9A9;
+  color: $nav-hint-color;
   font-family: "SourceSansPro";
   font-size: 11px;
   top: 50%;
   position: absolute;
-  width: 100%;
+  width: 86%;
   margin-top: 16px;
+  padding: 0px 7%;
   @include pageflow-progress-navigation-bar-small-height {
     display: none !important;
   }
@@ -74,6 +83,21 @@ $nav-active-chapter: #099293;
   right: 0;
   top: 0;
   z-index: 3;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-image: image-url('pageflow/progress_menu_indicator/progress_menu_indicator.png');
+    position: absolute;
+    right: 60px;
+    top: 4.05%;
+    @include transition(opacity 0.3s linear);
+    opacity: 1;
+    top: 35px;
+    background-position: left top;
+  }
 
   .navigation_button_area {
     width: 0;
@@ -119,7 +143,7 @@ $nav-active-chapter: #099293;
           }
 
           &:hover .navi_hint, &.active .navi_hint {
-            color: #b4c552;
+            color: $nav-hint-hover-color;
           }
         }
       }
@@ -137,6 +161,10 @@ $nav-active-chapter: #099293;
         opacity: 1;
         @include transition(opacity 0.2s ease 0.1s, right 0.3s ease);
       }
+    }
+
+    &:before {
+      opacity: 0;
     }
   }
 
@@ -248,7 +276,7 @@ $nav-active-chapter: #099293;
   }
 
   .navigation_menu_box {
-    @include pageflow-progress-navigation-bar-box(0, 90px);
+    @include pageflow-progress-navigation-bar-box(0, 87px);
 
     a {
       @include hover {
@@ -423,13 +451,26 @@ $nav-active-chapter: #099293;
               border-left: 5px solid #A6D513;
             }
           }
+
+          &:visited {
+            background-color: #9EA95C;
+          }
         }
 
-        li.chapter_odd a {
+/*        li.chapter_odd a {
           background-color: $nav-dot-odd;
 
           &.active {
             background-color: $nav-active-page;
+          }
+        } */
+
+        li.chapter_beginning a {
+          background-color: #D5D5D5;
+
+          &:visited {
+            background-color: #9EA95C;
+            opacity: 0;
           }
         }
 
@@ -522,5 +563,24 @@ $nav-active-chapter: #099293;
         }
       }
     }
+  }
+}
+
+.progress_navigation_bar.overview_active {
+  &:before {
+    background-position: right top;
+  }
+}
+
+.navigation_site_detail.progress_navigation h2 {
+  font-size: 1em;
+  line-height: 1.2em;
+  margin: 0;
+
+  > span {
+    display: block;
+  }
+  .chapter_number {
+    font-weight: normal;
   }
 }

@@ -132,6 +132,7 @@
           .toggleClass('active')
           .updateTitle();
         $('.header').toggleClass('active');
+        that.element.toggleClass('header_active');
       });
 
       /* open header through skiplinks */
