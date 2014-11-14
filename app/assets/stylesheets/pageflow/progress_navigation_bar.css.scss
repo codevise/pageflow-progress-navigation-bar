@@ -9,8 +9,8 @@ $nav-dot-odd: #afafaf;
 
 $nav-button-hr: #6f6f6f;
 
-$nav-active-page: #18d4d6;
-$nav-active-chapter: #099293;
+$nav-active-page: #b4c552;
+$nav-active-chapter: #879438;;
 
 @mixin pageflow-progress-navigation-bar-small-height {
   @media screen and (max-height: 700px) {
@@ -78,7 +78,7 @@ $nav-active-chapter: #099293;
 .progress_navigation_bar {
   @include unselectable;
   color: $nav-color;
-  width: 17px;
+  width: 30px;
   position: absolute;
   right: 0;
   top: 0;
@@ -105,15 +105,19 @@ $nav-active-chapter: #099293;
     border-right: 1px solid transparent;
     position: absolute;
     height: 100%;
-    @include transition(0.3s ease);
-    /*overflow: hidden;*/
+    @include transition(0.3s ease, overflow 0s);
+    overflow: hidden;
+
+    &:hover {
+      overflow: visible;
+    }
 
 
     .navigation_bar_buttons {
       @include transition(opacity 0.15s ease, right 0.3s ease);
-      right: -120px;
+      left:0;
       opacity: 0;
-      width: 100%;
+      width: 87px;
       position: absolute;
 
       @include pageflow-progress-navigation-bar-transparent-background;
@@ -151,20 +155,28 @@ $nav-active-chapter: #099293;
   }
 
   &.hover, &:hover {
-    width: 140px;
+    overflow: visible;
+    width: 122px;
     .navigation_button_area {
       width: 87px;
-      @include transition(none);
 
       .navigation_bar_buttons {
-        right: 0;
+        overflow: visible;
+        left: 0;
         opacity: 1;
-        @include transition(opacity 0.2s ease 0.1s, right 0.3s ease);
+        @include transition(opacity 0.2s ease 0.1s);
+
+        main & {
+          @include transition(opacity 0.2s ease 0.5s);
+        }
       }
     }
 
     &:before {
       opacity: 0;
+      main & {
+          @include transition(opacity 0.7s linear);
+        }
     }
   }
 
@@ -404,7 +416,6 @@ $nav-active-chapter: #099293;
     }
 
     .scroller {
-      overflow: hidden;
       top: 0;
       bottom: 0;
       right: 0;
@@ -442,6 +453,10 @@ $nav-active-chapter: #099293;
           border-bottom: 1px solid $bg-color;
           box-sizing: border-box;
 
+          &.in_active_chapter {
+            background-color: $nav-active-chapter;
+          }
+
           &.active {
             cursor: default;
             background-color: $nav-active-page;
@@ -452,13 +467,17 @@ $nav-active-chapter: #099293;
             }
           }
 
-          &:visited {
+          /* &:visited {
             background-color: #9EA95C;
-          }
+          } */
         }
 
 /*        li.chapter_odd a {
           background-color: $nav-dot-odd;
+
+          &.in_active_chapter {
+            background-color: $nav-active-chapter;
+          }
 
           &.active {
             background-color: $nav-active-page;
@@ -466,17 +485,28 @@ $nav-active-chapter: #099293;
         } */
 
         li.chapter_beginning a {
-          background-color: #D5D5D5;
+          background-color: #949494;
 
-          &:visited {
+            &.in_active_chapter {
+              background-color: $nav-active-chapter;
+            }
+
+        /*  &:visited {
             background-color: #9EA95C;
             opacity: 0;
-          }
+          } */
         }
 
         img {
           display: block;
         }
+      }
+    }
+    .no_chapters li.chapter_beginning a, .no_chapters li a.in_active_chapter, .scroller ul.no_chapters li.chapter_beginning a.in_active_chapter {
+      background-color: $nav-dot-even;
+
+      &.active {
+        background-color: $nav-active-page;
       }
     }
 

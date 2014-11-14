@@ -1,5 +1,5 @@
-<li class="<%= page_navigation_css_class(page) %>">
-  <%= link_to "##{page.perma_id}", :data => {:link => page.id} do %>
+<%= content_tag(:li, :class => page_navigation_css_class(page)) do %>
+  <%= link_to "##{page.perma_id}", :data => {:link => page.id, :chapter_id => page.chapter_id} do %>
   <% end %>
   <div class="navigation_site_detail progress_navigation">
     <% if chapters_count > 1 %>
@@ -13,4 +13,4 @@
 
     <%= image_tag("pageflow/#{page.template}_pictogram.png", :style => "background-image: url('#{page.thumbnail_url(:navigation_thumbnail_large)}')") %>
   </div>
-</li>
+<% end %>

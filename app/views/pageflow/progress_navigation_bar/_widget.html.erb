@@ -6,7 +6,7 @@
     <%= render 'pageflow/progress_navigation_bar/widget/bar_top', :entry => entry %>
   </div>
   <div class="scroller">
-    <ul class="navigation_dots">
+    <ul class="navigation_dots <%= entry.chapters.count > 1 ? '' : 'no_chapters' %>">
       <%= render :partial => 'pageflow/progress_navigation_bar/widget/page',
                  :collection => entry.pages.displayed_in_navigation,
                  :locals => {:image_style => :navigation_thumbnail_small, :image_width => 85, :chapters_count => entry.chapters.count} %>
