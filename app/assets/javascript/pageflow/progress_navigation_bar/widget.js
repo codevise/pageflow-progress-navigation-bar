@@ -52,6 +52,17 @@
       that.element.on('mousemove', function() { clearTimeout(closeBarTimeout); });
       that.element.on('mouseleave', function() { that.element.removeClass('hover'); checkingForMouseDelta = false; });
 
+
+      /* keyboard / skiplinks */
+
+      that.element.find('a, *[tabindex]').on('blur', function() {
+        that.element.removeClass('focus');
+      });
+
+      that.element.find('a, *[tabindex]').on('focus', function() {
+        that.element.addClass('focus');
+      });
+
       /*that.element.on('mousemove', function() {
         clearTimeout(closeBarTimeout);
         closeBarTimeout = setTimeout(function() {
@@ -191,8 +202,8 @@
         };
 
         $(this).on({
-          'mouseenter': handlerIn,
-          'mouseleave': hideOverlay,
+          'mouseenter focus': handlerIn,
+          'mouseleave blur': hideOverlay,
           'mousedown touchstart': registerHandler,
           'click': goToPage
         });

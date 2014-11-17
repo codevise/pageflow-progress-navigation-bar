@@ -126,6 +126,7 @@ $nav-active-chapter: #879438;;
         height: 11.11%;
         border-bottom: 1px solid $nav-button-hr;
         position: relative;
+        box-sizing: border-box;
 
         &.mute {
           height: 22.22%;
@@ -154,7 +155,22 @@ $nav-active-chapter: #879438;;
     }
   }
 
-  &.hover, &:hover {
+  &.with_home_button .navigation_button_area .navigation_bar_buttons {
+
+    li {
+      height: 10%;
+
+      &.mute {
+        height :20%;
+      }
+    }
+  }
+
+  &.focus .navigation_button_area {
+    overflow: visible;
+  }
+
+  &.hover, &:hover, &:focus, &.focus {
     overflow: visible;
     width: 122px;
     .navigation_button_area {
