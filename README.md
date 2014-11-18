@@ -22,6 +22,10 @@ Include javascripts and stylesheets:
     # app/assets/stylesheets/pageflow/application.css.scss
     @import "pageflow/progress_navigation_bar";
 
+    # Adding basic style to your theme
+    # app/assets/stylesheets/pageflow/themes/default/progress_navigation_bar.css.scss
+    @import "pageflow/themes/default/progress_navigation_bar";
+
 Execute `bundle install` Restart the application server.
 
 ## Troubleshooting
