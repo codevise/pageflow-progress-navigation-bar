@@ -1,0 +1,18 @@
+body .widget_progress_navigation_bar .navigation_mobile {
+  .menu.index {
+    right: 20px;
+  }
+  &.active .menu.index {
+    right: 200px;
+  }
+}
+
+.navigation_mobile, .navigation_mobile > * {
+  body.has_mobile_platform .widget_progress_navigation_bar & {
+    display: block;
+  }
+
+  body.has_no_mobile_platform .widget_progress_navigation_bar & {
+    display: none;
+  }
+}

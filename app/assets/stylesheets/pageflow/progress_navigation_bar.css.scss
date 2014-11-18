@@ -10,14 +10,17 @@ $nav-dot-odd: #afafaf;
 $nav-button-hr: #6f6f6f;
 
 $nav-active-page: #b4c552;
-$nav-active-chapter: #879438;;
+$nav-active-chapter: #879438;
+
+$progressbar-mobile-width: 14px;
+
+@import "cross_dependant_styles";
 
 @mixin pageflow-progress-navigation-bar-small-height {
   @media screen and (max-height: 870px) {
     @content;
   }
 }
-
 
 @mixin pageflow-progress-navigation-bar-transparent-background {
   &:after {
@@ -79,6 +82,19 @@ $nav-active-chapter: #879438;;
   @include unselectable;
   color: $nav-color;
   width: 30px;
+
+  .has_mobile_platform & {
+    width: $progressbar-mobile-width;
+    @include transition(opacity 0.4s ease 0.5s);
+    opacity: 0;
+    @include transform(translateZ(0));
+    -webkit-backface-visibility: hidden;
+  }
+
+  &.show_on_mobile {
+    opacity: 1;
+    @include transition(opacity 0.4s ease);
+  }
   position: absolute;
   right: 0;
   top: 0;
@@ -97,8 +113,11 @@ $nav-active-chapter: #879438;;
     opacity: 1;
     top: 35px;
     background-position: left top;
-  }
 
+    .has_mobile_platform & {
+      display: none;
+    }
+  }
   .navigation_button_area {
     width: 0;
     right: 30px;
@@ -173,8 +192,17 @@ $nav-active-chapter: #879438;;
   &.hover, &:hover, &:focus, &.focus {
     overflow: visible;
     width: 122px;
+
+    .has_mobile_platform & {
+      width: 14px;
+    }
+
     .navigation_button_area {
       width: 87px;
+
+      .has_mobile_platform & {
+        display: none;
+      }
 
       .navigation_bar_buttons {
         overflow: visible;
@@ -201,10 +229,6 @@ $nav-active-chapter: #879438;;
   }
 
   a.navigation_main, a.navigation_top, a.navigation_index {
-    display: none;
-  }
-
-  @include phone {
     display: none;
   }
 
@@ -436,16 +460,28 @@ $nav-active-chapter: #879438;;
       bottom: 0;
       right: 0;
       width: 30px;
+      .has_mobile_platform & {
+        width: $progressbar-mobile-width;
+      }
       max-height: 100%;
       overflow: hidden;
       position: absolute;
 
       @include pageflow-progress-navigation-bar-transparent-background;
 
+
+
       ul {
         position: absolute;
         right: 8px;
         width: 14px;
+
+        .has_mobile_platform & {
+          right: 3px;
+          width: 8px;
+
+
+        }
         top: 50%;
         max-height: 100%;
         @include transform(translate(0, -50%) !important);

@@ -48,6 +48,15 @@
         }
       });
 
+      pageflow.slides.on('slideshowchangepage', function() {
+        that.element.addClass('show_on_mobile');
+        setTimeout(function() {
+          that.element.removeClass('show_on_mobile');
+        }, 1000);
+      });
+
+
+
       that.element.on('mouseenter', function() { that.element.addClass('hover'); clearTimeout(closeBarTimeout);});
       that.element.on('mousemove', function() { clearTimeout(closeBarTimeout); });
       that.element.on('mouseleave', function() { that.element.removeClass('hover'); checkingForMouseDelta = false; });
@@ -129,12 +138,10 @@
 
       setVolume(pageflow.settings.get('volume'));
 
-      /* hide volume button on mobile devices */
+      /* hide buttons on mobile devices */
       if (pageflow.features.has('mobile platform')) {
-        $('li.mute', this.element).hide();
-        $('.navigation_bar_bottom', this.element).css('height', '224px');
-        $('.scroller', this.element).css('bottom', '224px');
-        $('.scroll_indicator.bottom', this.element).css('bottom', '190px');
+        that.element.find('.navigation_butten_area').hide();
+
       }
 
       /* header button */
