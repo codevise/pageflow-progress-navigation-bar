@@ -117,6 +117,10 @@ $progressbar-mobile-width: 14px;
     .has_mobile_platform & {
       display: none;
     }
+
+    .bigScreen &, .hideText & {
+      display: none;
+    }
   }
   .navigation_button_area {
     width: 0;
