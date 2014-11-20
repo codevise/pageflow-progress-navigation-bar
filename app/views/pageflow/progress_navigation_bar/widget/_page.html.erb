@@ -11,6 +11,6 @@
     <% end %>
     <%= page.title %>
 
-    <%= image_tag("pageflow/#{page.template}_pictogram.png", :style => "background-image: url('#{page.thumbnail_url(:navigation_thumbnail_large)}')") %>
+    <%= image_tag("pageflow/#{page.template}_pictogram.png", :style => "background-image: url('#{asset_path(page.thumbnail_url(:navigation_thumbnail_large))}')") %>
   </div>
 <% end %>
