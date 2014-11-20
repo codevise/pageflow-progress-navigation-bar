@@ -148,6 +148,10 @@ $progressbar-mobile-width: 14px;
       li {
         height: 11.11%;
         border-bottom: 1px solid $nav-button-hr;
+
+        &:last-child {
+          border-bottom: 0px solid $nav-button-hr;
+        }
         position: relative;
         box-sizing: border-box;
 
