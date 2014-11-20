@@ -10,7 +10,8 @@ $nav-dot-odd: #afafaf;
 $nav-button-hr: #6f6f6f;
 
 $nav-active-page: #b4c552;
-$nav-active-chapter: #879438;
+$nav-active-chapter-beginning: #879438;
+$nav-active-chapter: #6D772E;
 
 $progressbar-mobile-width: 14px;
 
@@ -514,7 +515,7 @@ $progressbar-mobile-width: 14px;
           box-sizing: border-box;
 
           &.in_active_chapter {
-            background-color: $nav-active-page;
+            background-color: $nav-active-chapter;
           }
 
           &.active {
@@ -548,7 +549,7 @@ $progressbar-mobile-width: 14px;
           background-color: #949494;
 
             &.in_active_chapter {
-              background-color: $nav-active-chapter;
+              background-color: $nav-active-chapter-beginning;
             }
 
         /*  &:visited {
