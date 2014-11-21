@@ -16,3 +16,14 @@ body .widget_progress_navigation_bar_present .navigation_mobile {
     display: none;
   }
 }
+.js .widget_progress_navigation_bar_present .page .close_button {
+  @include desktop {
+    right: 125px;
+  }
+}
+
+.js .widget_progress_navigation_bar_present .videoWrapper {
+  @include desktop {
+    margin-right: 30px;
+  }
+}
