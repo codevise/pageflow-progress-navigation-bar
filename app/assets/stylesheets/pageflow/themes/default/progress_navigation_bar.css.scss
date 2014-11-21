@@ -4,8 +4,11 @@ $nav-font: $standard-font;
 $nav-active-chapter: desaturate($main-color, 50%);
 $nav-active-page: $main-color;
 
+$nav-active-chapter-beginning: desaturate($main-color, 40%);
 
-$nav-dot-even: #afafaf;
+
+$nav-chapter-beginning: #afafaf;
+$nav-dot-even: #9B9B9B;
 $nav-dot-odd: #afafaf;
 
 $nav-bg-color: $basic-background-color;
@@ -259,10 +262,14 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     }
 
     li.chapter_beginning a {
-      background-color: $nav-color;
+      background-color: $nav-chapter-beginning;
 
         &.in_active_chapter {
-          background-color: $nav-active-page;
+          background-color: $nav-active-chapter-beginning;
+        }
+
+        &.active {
+          background-color: $main-color;
         }
     }
 
