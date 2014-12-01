@@ -167,6 +167,16 @@
         $(this).parent().parent().removeClass('focused');
       });
 
+      var links = $('.navigation_share_box > a', this.element),
+          shareBox = $('.navigation_share_box', this.element);
+        shareBox.shareMenu({
+        clickTarget: links,
+        subMenu: $('.sub_share', this.element),
+        links: links,
+        insertAfter: links.last(),
+        closeOnMouseLeaving: shareBox
+      });
+
       /* pages */
       var pageLinks = $('.navigation_dots a', that.element),
         target;
