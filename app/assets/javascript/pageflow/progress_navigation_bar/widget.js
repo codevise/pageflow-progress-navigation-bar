@@ -167,11 +167,10 @@
         $(this).parent().parent().removeClass('focused');
       });
 
-      var links = $('.navigation_share_box > a', this.element),
-          shareBox = $('.navigation_share_box', this.element);
+      var shareBox = $('.navigation_share_box', this.element),
+          links = $('> a', shareBox);
         shareBox.shareMenu({
-        clickTarget: links,
-        subMenu: $('.sub_share', this.element),
+        subMenu: $('.sub_share', shareBox),
         links: links,
         insertAfter: links.last(),
         closeOnMouseLeaving: shareBox
