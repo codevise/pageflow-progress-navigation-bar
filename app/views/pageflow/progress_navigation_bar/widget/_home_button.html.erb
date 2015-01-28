@@ -1,8 +1,8 @@
 <% if home_button.enabled? %>
   <li>
-    <%= link_to(home_button.url, class: "navigation_bullet navigation_home", tabindex: "2", title: "Zur Homepage") do %>
+    <%= link_to(home_button.url, class: "navigation_bullet navigation_home", tabindex: "2", title: t('.home_title')) do %>
       <span class="button"></span>
-      <span class="navi_hint">Startseite</span>
+      <span class="navi_hint"><%= t('.home') %></span>
     <% end %>
   </li>
 <% end %>

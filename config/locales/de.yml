@@ -1,5 +1,26 @@
 de:
   pageflow:
     progress_navigation_bar:
-      widget_type_name: "Navigationsleiste mit Fortschrittsbalken"
-      chapter: "Kapitel"
+      chapter: Kapitel
+      widget:
+        bar_top:
+          display_header: Dachnavigation anzeigen
+          display_overview: Übersicht anzeigen
+          enter_fullscreen: Vollbilddarstellung
+          first_page: Erste Seite
+          first_page_title: Zur ersten Seite
+          fullscreen: Vollbild
+          header: Navigation
+          hide_header: Dachnavigation schließen
+          hide_overview: Übersicht schließen
+          hide_text: Text ausblenden
+          imprint: Impressum
+          leave_fullscreen: Vollbilddarstellung verlassen
+          overview: Übersicht
+          share: Teilen
+          show_text: Text wieder einblenden
+          volume: Lautstärke
+        home_button:
+          home: Startseite
+          home_title: Zur Homepage
+      widget_type_name: Navigationsleiste mit Fortschrittsbalken

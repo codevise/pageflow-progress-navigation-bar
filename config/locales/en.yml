@@ -1,0 +1,26 @@
+en:
+  pageflow:
+    progress_navigation_bar:
+      chapter: Chapter
+      widget:
+        bar_top:
+          display_header: Display header
+          display_overview: Display overview
+          enter_fullscreen: Enter fullscreen mode
+          first_page: First page
+          first_page_title: Go to first page
+          fullscreen: Fullscreen
+          header: Navigation
+          hide_header: Close navigation
+          hide_overview: Hide overview
+          hide_text: Hide text
+          imprint: Imprint
+          leave_fullscreen: Leave fullscreen mode
+          overview: Overview
+          share: Share
+          show_text: Show text
+          volume: Volume
+        home_button:
+          home: Home
+          home_title: Go to homepage
+      widget_type_name: Progress navigation bar
