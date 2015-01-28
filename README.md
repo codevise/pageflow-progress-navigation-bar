@@ -35,3 +35,9 @@ If you run into problems while installing the page type, please also refer to th
 page in the [Pageflow  repository](https://github.com/codevise/pageflow). If that
 doesn't help, consider
 [filing an issue](https://github.com/codevise/pageflow-progress-navigation-bar/issues).
+
+## Contributing Locales
+
+Edit the translations directly on the
+[pageflow-progress-navigation-bar](http://www.localeapp.com/projects/public?search=tf/pageflow-progress-navigation-bar)
+locale project.
