@@ -106,7 +106,7 @@ $progressbar-mobile-width: 14px;
     display: block;
     width: 28px;
     height: 28px;
-    background-image: image-url('pageflow/progress_menu_indicator/progress_menu_indicator.png');
+    background-image: image-url('pageflow/progress_navigation_bar/indicator.png');
     position: absolute;
     right: 60px;
     top: 4.05%;
@@ -593,7 +593,7 @@ $progressbar-mobile-width: 14px;
         height: 100%;
 
         &:before, &:after, .volume-level:before {
-          background-image: image-url('pageflow/volume_control_sprite_progressbar.png');
+          background-image: image-url('pageflow/progress_navigation_bar/volume_control_sprite.png');
           position: absolute;
           width: 28px;
           height: 19px;
