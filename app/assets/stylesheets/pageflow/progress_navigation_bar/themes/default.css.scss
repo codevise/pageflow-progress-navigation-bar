@@ -332,37 +332,3 @@ $nav-display-header-button: false !default;
     background-color: $nav-color;
   }
 }
-
-.navigation_mobile {
-  .background_image:after {
-    background-image: image-url('pageflow/themes/#{$theme-name}/image_sprite.png');
-  }
-  .background_video:after {
-    background-image: image-url('pageflow/themes/#{$theme-name}/image_sprite.png');
-  }
-  .video:after {
-    background-image: image-url('pageflow/themes/#{$theme-name}/video_sprite.png');
-  }
-  .audio:after {
-    background-image: image-url('pageflow/themes/#{$theme-name}/audio_sprite.png');
-  }
-  .internal_links:after {
-    background-image: image-url('pageflow/themes/#{$theme-name}/internal_links_sprite.png');
-  }
-  .audio_loop:after {
-    background-image: image-url('pageflow/themes/#{$theme-name}/image_sprite.png');
-  }
-}
-
-.overview_mobile .credits a:before, .navigation_credits_box a:before {
-  background-image: none;
-  top: 1px;
-}
-
-.navigation_mobile, .navigation_mobile .overview_mobile .credits, .navigation_mobile .imprint_mobile .credits, .navigation_mobile .sharing_mobile .credits {
-  font-family: $nav-font;
-}
-
-.navigation_mobile .overview_mobile .credits a, .navigation_mobile .imprint_mobile .credits a, .navigation_mobile .sharing_mobile .credits a {
-  color: $nav-font;
-}
