@@ -15,23 +15,58 @@ $nav-bg-color: $basic-background-color;
 $bg-color: $nav-bg-color;
 $nav-bg-color-transparent: $basic-background-color-transparent;
 
+$nav-display-header-button: false !default;
+
 @mixin pageflow-progress-navigation-bar-small-height {
   @media screen and (max-height: 870px) {
     @content;
   }
 }
 
-.progress_navigation_bar.with_home_button {
-  .navigation_button_area .navigation_bar_buttons li {
-    height: 11.11%;
+.progress_navigation_bar {
+  @if $nav-display-header-button {
+    .navigation_button_area .navigation_bar_buttons li {
+      height: 11.11%;
 
-    &.mute {
-      height: 22.22%;
+      &.mute {
+        height: 22.22%;
+      }
+    }
+
+    &.with_home_button {
+      .navigation_button_area .navigation_bar_buttons li {
+        height: 10%;
+
+        &.mute {
+          height: 20%;
+        }
+      }
     }
   }
-}
+  @else {
+    .navigation_button_area .navigation_bar_buttons li {
+      height: 12.25%;
 
-.progress_navigation_bar {
+      &.menu_li {
+        display: none;
+      }
+
+      &.mute {
+        height: 25%;
+      }
+    }
+
+    &.with_home_button {
+      .navigation_button_area .navigation_bar_buttons li {
+        height: 11.11%;
+
+        &.mute {
+          height: 22.22%;
+        }
+      }
+    }
+  }
+
   .navigation_button_area .navigation_bar_buttons {
     &:after {
       background-color: $nav-bg-color;
@@ -40,17 +75,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
     .navigation_credits_box a{
       color: $main-color;
-    }
-
-    li {
-      &.menu_li {
-        display: none;
-      }
-      height: 12.5%;
-
-      &.mute {
-        height: 25%;
-      }
     }
 
     .navigation_bullet, .navigation_menu > a {
@@ -116,6 +140,12 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
       line-height: 28px;
       border-bottom: 0px !important;
 
+    }
+
+    .navigation_bullet.navigation_main {
+      .button {
+        @include fa-reorder-icon;
+      }
     }
 
     .navigation_bullet.navigation_top {
