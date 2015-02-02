@@ -6,6 +6,8 @@ $nav-active-page: $main-color;
 
 $nav-active-chapter-beginning: desaturate($main-color, 40%);
 
+$nav-hint-color: #A9A9A9 !default;
+$nav-display-header-button: false !default;
 
 $nav-chapter-beginning: #afafaf;
 $nav-dot-even: #9B9B9B;
@@ -14,8 +16,6 @@ $nav-dot-odd: #afafaf;
 $nav-bg-color: $basic-background-color;
 $bg-color: $nav-bg-color;
 $nav-bg-color-transparent: $basic-background-color-transparent;
-
-$nav-display-header-button: false !default;
 
 @mixin pageflow-progress-navigation-bar-small-height {
   @media screen and (max-height: 870px) {
@@ -113,6 +113,10 @@ $nav-display-header-button: false !default;
             color: rgba(255,255,255,0.9);
             text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
           }
+      }
+
+      .navi_hint {
+        color: $nav-hint-color;
       }
 
       &:hover, &.active, &:active {
