@@ -52,35 +52,36 @@ $progressbar-mobile-width: 14px;
   }
 }
 
-.hint {
-  position: absolute;
-  top: -1000em;
-  left: -1000em;
-  line-height: 0;
-  height: 0;
-  font-size: 0;
-  color: transparent;
-  border: 0 none;
-}
-.navi_hint {
-  text-align: center;
-  color: $nav-hint-color;
-  font-family: "SourceSansPro";
-  font-size: 11px;
-  top: 50%;
-  position: absolute;
-  width: 86%;
-  margin-top: 16px;
-  padding: 0px 7%;
-  @include pageflow-progress-navigation-bar-small-height {
-    display: none !important;
-  }
-}
-
 .progress_navigation_bar {
   @include unselectable;
   color: $nav-color;
   width: 30px;
+
+  .hint {
+    position: absolute;
+    top: -1000em;
+    left: -1000em;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+    color: transparent;
+    border: 0 none;
+  }
+
+  .navi_hint {
+    text-align: center;
+    color: $nav-hint-color;
+    font-family: "SourceSansPro";
+    font-size: 11px;
+    top: 50%;
+    position: absolute;
+    width: 86%;
+    margin-top: 16px;
+    padding: 0px 7%;
+    @include pageflow-progress-navigation-bar-small-height {
+      display: none !important;
+    }
+  }
 
   .has_mobile_platform & {
     width: $progressbar-mobile-width;
