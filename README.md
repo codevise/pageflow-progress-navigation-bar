@@ -1,5 +1,7 @@
 # Pageflow Progress Navigation Bar
 
+[![Gem Version](https://badge.fury.io/rb/pageflow-progress-navigation-bar.svg)](http://badge.fury.io/rb/pageflow-progress-navigation-bar)
+
 A navigation bar resembling a progress bar.
 
 ## Installation

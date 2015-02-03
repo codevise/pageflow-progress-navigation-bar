@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^spec/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'pageflow'
+  spec.add_runtime_dependency 'pageflow', '~> 0.7'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
