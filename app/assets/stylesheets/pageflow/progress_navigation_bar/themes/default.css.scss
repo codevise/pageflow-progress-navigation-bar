@@ -288,7 +288,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
       background-color: $nav-dot-even;
       border-bottom: 1px solid $nav-bg-color;
       border-bottom: 1px solid $nav-bg-color-transparent;
-      box-sizing: border-box;
+      @include box-sizing(border-box);
 
       &.in_active_chapter {
         background-color: $nav-active-chapter;

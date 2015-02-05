@@ -153,7 +153,7 @@ $progressbar-mobile-width: 14px;
           border-bottom: 0px solid $nav-button-hr;
         }
         position: relative;
-        box-sizing: border-box;
+        @include box-sizing(border-box);
 
         &.mute {
           height: 22.22%;
@@ -496,7 +496,7 @@ $progressbar-mobile-width: 14px;
 
         li {
           position: relative;
-          box-sizing: border-box;
+          @include box-sizing(border-box);
 
           &:last-child {
             margin-bottom: 0;
@@ -511,7 +511,7 @@ $progressbar-mobile-width: 14px;
           width: 100%;
           background-color: $nav-dot-even;
           border-bottom: 1px solid $bg-color;
-          box-sizing: border-box;
+          @include box-sizing(border-box);
 
           &.in_active_chapter {
             background-color: $nav-active-chapter;
