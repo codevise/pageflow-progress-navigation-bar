@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'pageflow-progress-navigation-bar'
-  spec.version       = '0.2.0.alpha'
+  spec.version       = '0.2.0'
   spec.authors       = ['Codevise Solutions Ltd.']
   spec.email         = ['info@codevise.de']
   spec.summary       = 'Pageflow navigation widget.'
