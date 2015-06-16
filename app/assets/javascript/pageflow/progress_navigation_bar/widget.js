@@ -80,63 +80,10 @@
       });*/
 
       /* Volume */
-
-      var handlingVolume = false;
-      var volumeBeforeMute = 1;
-      var muteButton = $('.navigation_bg.navigation_mute', that.element);
-      var changeVolume = function(event) {
-        var volume = 1 - (event.pageY - $('.volume-slider', that.element).offset().top) / $(('.volume-slider')).height();
-        if (volume > 1) { volume = 1; }
-        if (volume < 0) { volume = 0; }
-        setVolume(volume);
-      };
-
-      var setVolume = function(volume) {
-        $('.volume-level', that.element).css({height: volume * 100 + "%"});
-        pageflow.settings.set('volume', volume);
-
-        if (volume === 0) {
-          muteButton
-            .attr('title', muteButton.attr('data-muted-title'))
-            .addClass('muted');
-        }
-        else {
-          muteButton
-            .attr('title', muteButton.attr('data-not-muted-title'))
-            .removeClass('muted');
-        }
-      };
-
-      var toggleMute = function () {
-        if (pageflow.settings.get('volume') > 0) {
-          volumeBeforeMute = pageflow.settings.get('volume');
-          setVolume(0);
-        }
-        else {
-          setVolume(volumeBeforeMute);
-        }
-      };
-
-      muteButton.on("click", function() {
-        toggleMute();
+      that.element.find('.navigation_volume_box').volumeSlider({
+        orientation: 'v'
       });
-
-      $('.volume-level', this.element).css({
-        height: pageflow.settings.get("volume") * 100 + "%"
-      });
-
-      $('.navigation_volume_box', this.element).on("mousedown", function(event) {
-        handlingVolume = true;
-        changeVolume(event);
-      });
-
-      $('.navigation_volume_box', this.element).on("mousemove", function(event) {
-        if(handlingVolume) {
-          changeVolume(event);
-        }
-      });
-
-      setVolume(pageflow.settings.get('volume'));
+      that.element.find('.navigation_mute').muteButton();
 
       /* hide buttons on mobile devices */
       if (pageflow.features.has('mobile platform')) {
