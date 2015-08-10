@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Codevise Solutions Ltd.']
   spec.email         = ['info@codevise.de']
   spec.summary       = 'Pageflow navigation widget.'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/codevise/pageflow-progress-navigation-bar'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

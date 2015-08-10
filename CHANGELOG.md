@@ -4,7 +4,12 @@
 
 [Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.2.0...master)
 
-None so far.
+- Add theme option to hide overview button.
+  ([#4](https://github.com/codevise/pageflow-progress-navigation-bar/pull/4))
+- Use shared volume slider and mute button widget.
+  ([#3](https://github.com/codevise/pageflow-progress-navigation-bar/pull/3))
+- Remove executables property from gemspec.
+  ([#2](https://github.com/codevise/pageflow-progress-navigation-bar/pull/2))
 
 ### Version 0.2.0
 
