@@ -2,7 +2,15 @@
 
 ### Changes on `master`
 
-[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.2.0...master)
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.3.0...master)
+
+None so far.
+
+### Version 0.3.0
+
+2015-10-23
+
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.2.0...v0.3.0)
 
 - Add theme option to hide overview button.
   ([#4](https://github.com/codevise/pageflow-progress-navigation-bar/pull/4))
