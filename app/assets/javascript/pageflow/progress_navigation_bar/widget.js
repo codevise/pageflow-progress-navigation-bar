@@ -14,40 +14,6 @@
       $('.navigation_bar_bottom', this.element)
         .append($('.navigation_bar_top > li', this.element).slice(hasHomeButton ? 4 : 3));
 
-
-      /* open menu magic */
-      var checkingForMouseDelta = false,
-        lastPosition,
-        openBarTimeout,
-        closeBarTimeout,
-        measuringDistance = 600,
-        recentPosition;
-
-      $('body').on('mousemove', function(e) {
-        recentPosition = e.pageX;
-        var measuredDistance = that.element.offset().left - e.pageX;
-        if(measuredDistance < measuringDistance && !checkingForMouseDelta && measuredDistance > 0) {
-          checkingForMouseDelta = true;
-          lastPosition = e.pageX;
-
-          closeBarTimeout = setTimeout(function() {
-            that.element.removeClass('hover');
-            checkingForMouseDelta = false;
-          }, 2000);
-
-          openBarTimeout = setTimeout(function() {
-              if(recentPosition - lastPosition > 100 * (measuredDistance / measuringDistance) + 10) {
-                that.element.addClass('hover');
-
-              }
-              else {
-                checkingForMouseDelta = false;
-                clearTimeout(closeBarTimeout);
-              }
-          },50);
-        }
-      });
-
       pageflow.slides.on('slideshowchangepage', function() {
         that.element.addClass('show_on_mobile');
         setTimeout(function() {
@@ -55,12 +21,8 @@
         }, 1000);
       });
 
-
-
-      that.element.on('mouseenter', function() { that.element.addClass('hover'); clearTimeout(closeBarTimeout);});
-      that.element.on('mousemove', function() { clearTimeout(closeBarTimeout); });
-      that.element.on('mouseleave', function() { that.element.removeClass('hover'); checkingForMouseDelta = false; });
-
+      that.element.on('mouseenter', function() { that.element.addClass('hover'); });
+      that.element.on('mouseleave', function() { that.element.removeClass('hover'); });
 
       /* keyboard / skiplinks */
 
@@ -71,13 +33,6 @@
       that.element.find('a, *[tabindex]').on('focus', function() {
         that.element.addClass('focus');
       });
-
-      /*that.element.on('mousemove', function() {
-        clearTimeout(closeBarTimeout);
-        closeBarTimeout = setTimeout(function() {
-          that.element.removeClass('hover');
-        }, 500);
-      });*/
 
       /* Volume */
       that.element.find('.navigation_volume_box').volumeSlider({
