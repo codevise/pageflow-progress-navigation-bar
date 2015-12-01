@@ -1,8 +1,8 @@
 <% if home_button.enabled? %>
   <li>
-    <%= link_to(home_button.url, class: "navigation_bullet navigation_home", tabindex: "2", title: t('.home_title')) do %>
+    <%= link_to(home_button.url, class: "navigation_bullet navigation_home", tabindex: "2", title: t('pageflow.public.show_home')) do %>
       <span class="button"></span>
-      <span class="navi_hint"><%= t('.home') %></span>
+      <span class="navi_hint"><%= t('pageflow.public.home') %></span>
     <% end %>
   </li>
 <% end %>
