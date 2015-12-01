@@ -142,7 +142,7 @@
           appliedHeight = pageDotsMaxHeight;
         }
 
-        $('.navigation_dots > li').css('height', appliedHeight + 'px');
+        $('.navigation_dots > li').css('height', Math.round(appliedHeight) + 'px');
       };
 
       resizeDots();
