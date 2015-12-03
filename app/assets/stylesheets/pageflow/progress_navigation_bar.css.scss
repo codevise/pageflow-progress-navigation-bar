@@ -501,6 +501,10 @@ $progressbar-mobile-width: 14px;
           &:last-child {
             margin-bottom: 0;
           }
+
+          &.filtered {
+            display: none;
+          }
         }
 
         a {
