@@ -2,8 +2,17 @@ body .widget_progress_navigation_bar_present .navigation_mobile {
   .menu.index {
     right: 20px;
   }
+
   &.active .menu.index {
     right: 200px;
+  }
+
+  .parent_page {
+    right: 70px;
+  }
+
+  &.active .parent_page {
+    right: 250px;
   }
 }
 
@@ -11,11 +20,8 @@ body .widget_progress_navigation_bar_present .navigation_mobile {
   body.has_mobile_platform .widget_progress_navigation_bar_present & {
     display: block;
   }
-
-  body.has_no_mobile_platform .widget_progress_navigation_bar_present & {
-    display: none;
-  }
 }
+
 .js .widget_progress_navigation_bar_present .page .close_button {
   @include desktop {
     right: 125px;

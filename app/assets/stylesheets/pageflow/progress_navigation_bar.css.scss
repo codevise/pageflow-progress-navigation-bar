@@ -24,6 +24,16 @@ $progressbar-mobile-width: 14px;
   }
 }
 
+@mixin pageflow-progress-mobile-variant {
+  .has_mobile_platform & {
+    @content;
+  }
+
+  @include phone {
+    @content;
+  }
+}
+
 @mixin pageflow-progress-navigation-bar-transparent-background {
   &:after {
     height: 100%;
@@ -84,7 +94,7 @@ $progressbar-mobile-width: 14px;
     }
   }
 
-  .has_mobile_platform & {
+  @include pageflow-progress-mobile-variant {
     width: $progressbar-mobile-width;
     @include transition(opacity 0.4s ease 0.5s);
     opacity: 0;
@@ -96,6 +106,7 @@ $progressbar-mobile-width: 14px;
     opacity: 1;
     @include transition(opacity 0.4s ease);
   }
+
   position: absolute;
   right: 0;
   top: 0;
@@ -115,7 +126,7 @@ $progressbar-mobile-width: 14px;
     top: 35px;
     background-position: left top;
 
-    .has_mobile_platform & {
+    @include pageflow-progress-mobile-variant {
       display: none;
     }
 
@@ -202,14 +213,14 @@ $progressbar-mobile-width: 14px;
     overflow: visible;
     width: 122px;
 
-    .has_mobile_platform & {
+    @include pageflow-progress-mobile-variant {
       width: 14px;
     }
 
     .navigation_button_area {
       width: 87px;
 
-      .has_mobile_platform & {
+      @include pageflow-progress-mobile-variant {
         display: none;
       }
 
@@ -469,31 +480,27 @@ $progressbar-mobile-width: 14px;
       bottom: 0;
       right: 0;
       width: 30px;
-      .has_mobile_platform & {
-        width: $progressbar-mobile-width;
-      }
       max-height: 100%;
       overflow: hidden;
       position: absolute;
-
       @include pageflow-progress-navigation-bar-transparent-background;
 
-
+      @include pageflow-progress-mobile-variant {
+        width: $progressbar-mobile-width;
+      }
 
       ul {
         position: absolute;
         right: 8px;
         width: 14px;
-
-        .has_mobile_platform & {
-          right: 3px;
-          width: 8px;
-
-
-        }
         top: 50%;
         max-height: 100%;
         @include transform(translate(0, -50%) !important);
+
+        @include pageflow-progress-mobile-variant {
+          right: 3px;
+          width: 8px;
+        }
 
         li {
           position: relative;
