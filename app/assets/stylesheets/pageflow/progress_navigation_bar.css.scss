@@ -16,6 +16,7 @@ $nav-active-chapter: #6D772E;
 $progressbar-mobile-width: 14px;
 
 @import "cross_dependant_styles";
+@import "./progress_navigation_bar/animations";
 
 @mixin pageflow-progress-navigation-bar-small-height {
   @media screen and (max-height: 870px) {
@@ -505,6 +506,47 @@ $progressbar-mobile-width: 14px;
           &.filtered {
             display: none;
           }
+
+          &.animate_in {
+            &.moving_forwards {
+              @include animation(pageflow-progress-navigation-bar-slide-in-from-bottom 0.4s ease-out);
+            }
+
+            &.moving_backwards {
+              @include animation(pageflow-progress-navigation-bar-slide-in-from-top 0.4s ease-out);
+            }
+
+            &.moving_down {
+              @include animation(pageflow-progress-navigation-bar-slide-in-from-right 0.4s ease-out);
+            }
+
+            &.moving_up {
+              @include animation(pageflow-progress-navigation-bar-slide-in-from-left 0.4s ease-out);
+            }
+          }
+
+          &.animate_out {
+            &.moving_forwards {
+              @include animation(pageflow-progress-navigation-bar-slide-out-to-top 0.4s ease-in);
+              opacity: 0;
+            }
+
+            &.moving_backwards {
+              @include animation(pageflow-progress-navigation-bar-slide-out-to-bottom 0.4s ease-in);
+              opacity: 0;
+            }
+
+            &.moving_down {
+              @include animation(pageflow-progress-navigation-bar-slide-out-to-left 0.4s ease-in);
+              @include transform(translate3d(-50px, 0, 0));
+            }
+
+            &.moving_up {
+              @include animation(pageflow-progress-navigation-bar-slide-out-to-right 0.4s ease-in);
+              @include transform(translate3d(50px, 0, 0));
+            }
+          }
+
         }
 
         a {

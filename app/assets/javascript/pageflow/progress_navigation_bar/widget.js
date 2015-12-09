@@ -171,7 +171,9 @@
 
         $('ul.navigation_dots', that.element).pageNavigationList({
           scroller: scroller,
-          scrollToActive: true
+          scrollToActive: true,
+          animationDuration: 400,
+          onFilterChange: resizeDots
         });
 
       });
