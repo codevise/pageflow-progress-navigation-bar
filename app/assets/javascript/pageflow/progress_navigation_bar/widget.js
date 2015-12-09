@@ -131,18 +131,17 @@
         var pageDotsMaxHeight = 20,
         pageDotsMinHeight = 1,
         maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
-        wantedHeight = maxBarHeight / pageLinks.length,
+        wantedHeight = maxBarHeight / pageLinks.filter(':not(.filtered)').length,
         appliedHeight = pageDotsMinHeight;
 
-
-        if(wantedHeight <= pageDotsMaxHeight && wantedHeight > pageDotsMinHeight) {
+        if (wantedHeight <= pageDotsMaxHeight && wantedHeight > pageDotsMinHeight) {
           appliedHeight = wantedHeight;
         }
         else if(wantedHeight > pageDotsMinHeight) {
           appliedHeight = pageDotsMaxHeight;
         }
 
-        $('.navigation_dots > li').css('height', appliedHeight + 'px');
+        $('.navigation_dots > li').css('height', Math.floor(appliedHeight) + 'px');
       };
 
       resizeDots();
