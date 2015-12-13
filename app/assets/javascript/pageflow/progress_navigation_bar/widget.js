@@ -9,6 +9,9 @@
 
       this.element.addClass('js').append(overlays);
 
+      this.element.toggleClass('horizontal', this.element.data('widget') === 'progress_navigation_bar_horizontal');
+      this.element.toggleClass('vertical', this.element.data('widget') !== 'progress_navigation_bar_horizontal');
+
       $('a.navigation_top', this.element).topButton();
 
       $('.navigation_bar_bottom', this.element)

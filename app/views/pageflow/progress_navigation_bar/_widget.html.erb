@@ -1,6 +1,6 @@
 <%= content_tag(:div,
                 class: ["progress_navigation_bar", entry.home_button.enabled? ? 'with_home_button' : nil].compact.join(' '),
-                data: {widget: 'progress_navigation_bar'}) do %>
+                data: {widget: horizontal ? 'progress_navigation_bar_horizontal' : 'progress_navigation_bar'}) do %>
 
   <div class="navigation_button_area">
     <%= render 'pageflow/progress_navigation_bar/widget/bar_top', :entry => entry %>
