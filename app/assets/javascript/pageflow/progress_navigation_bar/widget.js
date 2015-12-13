@@ -39,7 +39,7 @@
 
       /* Volume */
       that.element.find('.navigation_volume_box').volumeSlider({
-        orientation: 'v'
+        orientation: that.element.hasClass('horizontal') ? 'h' : 'v'
       });
       that.element.find('.navigation_mute').muteButton();
 
