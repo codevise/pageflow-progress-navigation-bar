@@ -1,0 +1,50 @@
+@mixin pageflow-progress-navigation-bar-small-height {
+  @media screen and (max-height: 870px) {
+    @content;
+  }
+}
+
+@mixin pageflow-progress-navigation-bar-small-width {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin pageflow-progress-mobile-variant {
+  .has_mobile_platform & {
+    @content;
+  }
+
+  @include phone {
+    @content;
+  }
+}
+
+@mixin pageflow-progress-navigation-bar-transparent-background {
+  &:after {
+    height: 100%;
+    background-image: none;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    content: "";
+  }
+}
+
+@mixin pageflow-progress-navigation-bar-box($margin-top, $right) {
+  visibility: hidden;
+  margin-top: $margin-top;
+  background-color: $bg-color;
+  border: 2px solid $nav-color;
+  position: absolute;
+  right: $right;
+  padding: 15px;
+  height: auto;
+  left: initial;
+
+  hr {
+    border:0;
+    border-bottom: 1px solid $nav-color;
+  }
+}
