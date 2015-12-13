@@ -17,6 +17,7 @@ $progressbar-mobile-width: 14px;
 
 @import "cross_dependant_styles";
 @import "./progress_navigation_bar/animations";
+@import "./progress_navigation_bar/vertical";
 
 @mixin pageflow-progress-navigation-bar-small-height {
   @media screen and (max-height: 870px) {
