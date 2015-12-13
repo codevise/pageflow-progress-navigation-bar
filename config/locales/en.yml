@@ -1,4 +1,7 @@
 en:
   pageflow:
     progress_navigation_bar:
-      widget_type_name: Progress navigation bar
+      vertical:
+        widget_type_name: Vertical progress navigation bar
+      horizontal:
+        widget_type_name: Horizontal progress navigation bar
