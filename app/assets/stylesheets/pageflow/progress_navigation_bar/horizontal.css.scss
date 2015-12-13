@@ -1,0 +1,165 @@
+.js.progress_navigation_bar.horizontal {
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  background: $bg-color;
+
+  &:before {
+    display: none;
+  }
+
+  .navigation_button_area {
+    width: 100%;
+    height: 100px;
+    top: 30px;
+    left: 0;
+
+    @include pageflow-progress-navigation-bar-small-width {
+      height: 50px;
+    }
+
+    .navigation_bar_buttons {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      background: $bg-color;
+
+      .navigation_share_box, .navigation_credits_box {
+        display: none;
+      }
+
+      li.menu_li {
+        display: none;
+      }
+
+      li.navigation_menu.mute {
+        @include pageflow-progress-navigation-bar-small-width {
+          width: 150px;
+        }
+
+        .navigation_volume_box {
+          position: absolute;
+
+          .volume-control {
+            text-align: center;
+            display: inline-block;
+            margin: 20px 0 0 0;
+
+            @include pageflow-progress-navigation-bar-small-width {
+              margin: 7px 0 0 0;
+            }
+
+            &:before, &:after {
+              background-image: image-url('pageflow/volume_control_sprite.png');
+              display: inline-block;
+              position: relative;
+              top: 7px;
+              left: 0;
+              width: 19px;
+              height: 19px;
+              content: " ";
+              background-repeat: no-repeat;
+              margin: 0;
+            }
+
+            &:before {
+              background-position: left top;
+            }
+            &:after {
+              background-position: -21px top;
+            }
+
+            .volume-slider {
+              display: inline-block;
+              position: relative;
+              left: 0;
+              top: 0;
+              width: 100px;
+              height: 4px;
+              background-color: gray;
+            }
+
+            .volume-level {
+              height: 100%;
+              background-color: #b4c552;
+
+              &:before {
+                display: block;
+                content: "";
+                background-position: -66px top;
+                top: -9px;
+                width: 18px;
+                height: 16px;
+                right: -18px;
+              }
+            }
+          }
+        }
+      }
+
+      li {
+        display: inline-block;
+        height: 100%;
+        width: 150px;
+        border: 0;
+
+        @include pageflow-progress-navigation-bar-small-width {
+          width: 50px;
+        }
+
+        .button {
+          top: 20%;
+          left: 0;
+          padding: 0;
+          margin: 0 auto;
+          position: relative;
+        }
+
+        .navi_hint {
+          top: 70px;
+          left: 0;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          position: absolute;
+          @include pageflow-progress-navigation-bar-small-width {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .scroller {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .navigation_dots {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      margin: 6px;
+      text-align: center;
+
+      li {
+        width: 20px;
+        height: 18px;
+        min-width: 1px;
+        max-width: 20px;
+        margin-right: 1px;
+        display: inline-block;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .navigation_site_detail {
+    display: none;
+  }
+}

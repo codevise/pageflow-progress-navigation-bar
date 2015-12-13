@@ -1,0 +1,27 @@
+.js.progress_navigation_bar.vertical {
+  .navigation_menu.mute {
+    .navi_hint {
+      display: none;
+    }
+
+    .volume-control {
+      .volume-level {
+        &:before {
+          display: block;
+          content: "";
+          background-position: -66px top;
+          top: -9px;
+          width: 18px;
+          height: 16px;
+          left: -6px;
+        }
+      }
+    }
+
+    .navi_hint {
+      @include pageflow-progress-navigation-bar-small-height {
+        display: none;
+      }
+    }
+  }
+}

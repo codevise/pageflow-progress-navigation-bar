@@ -16,53 +16,10 @@ $nav-active-chapter: #6D772E;
 $progressbar-mobile-width: 14px;
 
 @import "cross_dependant_styles";
+@import "./progress_navigation_bar/mixins";
 @import "./progress_navigation_bar/animations";
+@import "./progress_navigation_bar/horizontal";
 @import "./progress_navigation_bar/vertical";
-
-@mixin pageflow-progress-navigation-bar-small-height {
-  @media screen and (max-height: 870px) {
-    @content;
-  }
-}
-
-@mixin pageflow-progress-mobile-variant {
-  .has_mobile_platform & {
-    @content;
-  }
-
-  @include phone {
-    @content;
-  }
-}
-
-@mixin pageflow-progress-navigation-bar-transparent-background {
-  &:after {
-    height: 100%;
-    background-image: none;
-    width: 100%;
-    top: 0;
-    position: absolute;
-    z-index: -1;
-    content: "";
-  }
-}
-
-@mixin pageflow-progress-navigation-bar-box($margin-top, $right) {
-  visibility: hidden;
-  margin-top: $margin-top;
-  background-color: $bg-color;
-  border: 2px solid $nav-color;
-  position: absolute;
-  right: $right;
-  padding: 15px;
-  height: auto;
-  left: initial;
-
-  hr {
-    border:0;
-    border-bottom: 1px solid $nav-color;
-  }
-}
 
 .progress_navigation_bar {
   @include unselectable;
@@ -90,9 +47,6 @@ $progressbar-mobile-width: 14px;
     width: 86%;
     margin-top: 16px;
     padding: 0px 7%;
-    @include pageflow-progress-navigation-bar-small-height {
-      display: none !important;
-    }
   }
 
   @include pageflow-progress-mobile-variant {
@@ -695,16 +649,6 @@ $progressbar-mobile-width: 14px;
         background-color: #b4c552;
         bottom: 0;
         position: absolute;
-
-        &:before {
-          display: block;
-          content: "";
-          background-position: -66px top;
-          top: -9px !important;
-          width: 18px !important;
-          height: 16px !important;
-          left: -6px !important;
-        }
       }
     }
   }
