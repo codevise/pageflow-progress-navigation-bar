@@ -131,20 +131,37 @@
       });
 
       var resizeDots = function() {
-        var pageDotsMaxHeight = 20,
-        pageDotsMinHeight = 1,
-        maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
-        wantedHeight = maxBarHeight / pageLinks.filter(':not(.filtered)').length,
-        appliedHeight = pageDotsMinHeight;
+        var pageDotsMaxSize = 20,
+            pageDotsMinSize = 1;
 
-        if (wantedHeight <= pageDotsMaxHeight && wantedHeight > pageDotsMinHeight) {
-          appliedHeight = wantedHeight;
-        }
-        else if(wantedHeight > pageDotsMinHeight) {
-          appliedHeight = pageDotsMaxHeight;
-        }
+        if (that.element.hasClass('horizontal')) {
+          var maxBarWidth = $('.navigation_dots').width(),
+              wantedWidth = maxBarWidth / pageLinks.filter(':not(.filtered)').length,
+              appliedWidth = pageDotsMinSize;
 
-        $('.navigation_dots > li').css('height', Math.floor(appliedHeight) + 'px');
+          if (wantedWidth <= pageDotsMaxSize && wantedWidth > pageDotsMinSize) {
+            appliedWidth = wantedWidth;
+          }
+          else if (wantedWidth > pageDotsMinSize) {
+            appliedWidth = pageDotsMaxSize;
+          }
+
+          $('.navigation_dots > li').css('width', Math.floor(appliedWidth) + 'px').css('height', '');
+        }
+        else {
+          var maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
+              wantedHeight = maxBarHeight / pageLinks.filter(':not(.filtered)').length,
+              appliedHeight = pageDotsMinSize;
+
+          if (wantedHeight <= pageDotsMaxSize && wantedHeight > pageDotsMinSize) {
+            appliedHeight = wantedHeight;
+          }
+          else if (wantedHeight > pageDotsMinSize) {
+            appliedHeight = pageDotsMaxSize;
+          }
+
+          $('.navigation_dots > li').css('height', Math.floor(appliedHeight) + 'px').css('width', '');
+        }
       };
 
       resizeDots();
