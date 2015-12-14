@@ -26,7 +26,13 @@
       background: $bg-color;
 
       .navigation_share_box, .navigation_credits_box {
-        display: none;
+        top: 100px;
+        height: 35px;
+        right: -40%;
+
+        @include pageflow-progress-navigation-bar-small-width {
+          top: 50px;
+        }
       }
 
       li.menu_li {
