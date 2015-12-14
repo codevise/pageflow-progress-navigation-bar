@@ -117,8 +117,18 @@
       pageLinks.each(function(index) {
         var handlerIn = function() {
           if (!('ontouchstart' in document.documentElement)) {
-            var calculatedOffset = $(this).offset().top + $(overlays[index]).outerHeight() > $('.progress_navigation_bar').height() ? $('.progress_navigation_bar').height() - $(overlays[index]).outerHeight() : $(this).offset().top;
-            $(overlays[index]).css("top", calculatedOffset).addClass('visible').removeClass('hidden');
+            if (that.element.hasClass('horizontal')) {
+              var calculatedOffsetLeft = $(this).offset().left;
+
+              $(overlays[index]).css("left", calculatedOffsetLeft).addClass('visible').removeClass('hidden');
+            }
+            else {
+              var calculatedOffsetTop = $(this).offset().top + $(overlays[index]).outerHeight()
+              > $('.progress_navigation_bar').height() ? $('.progress_navigation_bar').height()
+              - $(overlays[index]).outerHeight() : $(this).offset().top;
+
+              $(overlays[index]).css("top", calculatedOffsetTop).addClass('visible').removeClass('hidden');
+            }
           }
         };
 
