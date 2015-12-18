@@ -446,11 +446,6 @@ $progressbar-mobile-width: 14px;
 
       ul {
         position: absolute;
-        right: 8px;
-        width: 14px;
-        top: 50%;
-        max-height: 100%;
-        @include transform(translate(0, -50%) !important);
 
         @include pageflow-progress-mobile-variant {
           right: 3px;

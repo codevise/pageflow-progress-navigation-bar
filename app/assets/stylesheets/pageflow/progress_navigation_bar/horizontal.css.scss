@@ -1,3 +1,6 @@
+$thumbnail-width: 125px;
+$thumbnail-small-width: 50px;
+
 .js.progress_navigation_bar.horizontal {
   top: 0;
   left: 0;
@@ -16,7 +19,7 @@
     left: 0;
 
     @include pageflow-progress-navigation-bar-small-width {
-      height: 50px;
+      height: $thumbnail-small-width;
     }
 
     .navigation_bar_buttons {
@@ -31,7 +34,7 @@
         right: -40%;
 
         @include pageflow-progress-navigation-bar-small-width {
-          top: 50px;
+          top: $thumbnail-small-width;
         }
       }
 
@@ -39,13 +42,22 @@
         display: none;
       }
 
+      li.navigation_overview_item {
+        .navigation_bullet.navigation_index {
+          margin-top: 0;
+        }
+      }
+
       li.navigation_menu.mute {
+        height: 100%;
+
         @include pageflow-progress-navigation-bar-small-width {
-          width: 150px;
+          width: $thumbnail-width;
         }
 
         .navigation_volume_box {
           position: absolute;
+          width: 100%;
 
           .volume-control {
             text-align: center;
@@ -79,16 +91,16 @@
             .volume-slider {
               display: inline-block;
               position: relative;
-              left: 0;
+              left: -2px;
               top: 0;
-              width: 100px;
+              width: 78px;
               height: 4px;
               background-color: gray;
             }
 
             .volume-level {
               height: 100%;
-              max-width: 82%;
+              max-width: 62px;
 
               &:before {
                 display: block;
@@ -107,11 +119,11 @@
       li {
         display: inline-block;
         height: 100%;
-        width: 150px;
+        width: $thumbnail-width;
         border: 0;
 
         @include pageflow-progress-navigation-bar-small-width {
-          width: 50px;
+          width: $thumbnail-small-width;
         }
 
         .button {
@@ -147,20 +159,20 @@
       width: 100%;
       height: 100%;
       left: 0;
-      margin: 6px;
+      margin: 6px 0 0 0;
       text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
 
       li {
         width: 20px;
         height: 18px;
-        min-width: 1px;
-        max-width: 20px;
         margin-right: 1px;
         display: inline-block;
-      }
 
-      &:last-child {
-        margin-right: 0;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -168,5 +180,6 @@
   .navigation_site_detail {
     width: 170px;
     top: 30px;
+    right: 0;
   }
 }

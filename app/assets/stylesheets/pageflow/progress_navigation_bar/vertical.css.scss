@@ -1,4 +1,13 @@
 .js.progress_navigation_bar.vertical {
+
+  .navigation_dots {
+    right: 8px;
+    width: 14px;
+    top: 50%;
+    max-height: 100%;
+    @include transform(translate(0, -50%) !important);
+  }
+
   .navigation_menu.mute {
     .navi_hint {
       display: none;

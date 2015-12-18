@@ -118,16 +118,23 @@
         var handlerIn = function() {
           if (!('ontouchstart' in document.documentElement)) {
             if (that.element.hasClass('horizontal')) {
-              var calculatedOffsetLeft = $(this).offset().left;
+              var offset = 204;
+              var left = $(this).offset().left;
+              var right = left + offset;
+              var width = $('.progress_navigation_bar').width();
+              var calculatedOffsetLeft = left;
+              if (right > width) {
+                calculatedOffsetLeft = width - offset;
+              }
 
-              $(overlays[index]).css("left", calculatedOffsetLeft).addClass('visible').removeClass('hidden');
+              $(overlays[index]).css('left', calculatedOffsetLeft).css('top', '').addClass('visible').removeClass('hidden');
             }
             else {
               var calculatedOffsetTop = $(this).offset().top + $(overlays[index]).outerHeight()
               > $('.progress_navigation_bar').height() ? $('.progress_navigation_bar').height()
               - $(overlays[index]).outerHeight() : $(this).offset().top;
 
-              $(overlays[index]).css("top", calculatedOffsetTop).addClass('visible').removeClass('hidden');
+              $(overlays[index]).css('top', calculatedOffsetTop).css('left', '').addClass('visible').removeClass('hidden');
             }
           }
         };
@@ -145,18 +152,12 @@
             pageDotsMinSize = 1;
 
         if (that.element.hasClass('horizontal')) {
-          var maxBarWidth = $('.navigation_dots').width(),
-              wantedWidth = maxBarWidth / pageLinks.filter(':not(.filtered)').length,
-              appliedWidth = pageDotsMinSize;
+          var maxBarWidth = $('.navigation_dots').width();
+          var wantedWidth = Math.floor(maxBarWidth / pageLinks.filter(':not(.filtered)').length);
+          var appliedWidth = (wantedWidth > pageDotsMaxSize) ? pageDotsMaxSize :
+              (wantedWidth < pageDotsMinSize) ? pageDotsMinSize : wantedWidth - 1;
 
-          if (wantedWidth <= pageDotsMaxSize && wantedWidth > pageDotsMinSize) {
-            appliedWidth = wantedWidth;
-          }
-          else if (wantedWidth > pageDotsMinSize) {
-            appliedWidth = pageDotsMaxSize;
-          }
-
-          $('.navigation_dots > li').css('width', Math.floor(appliedWidth) + 'px').css('height', '');
+          $('.navigation_dots > li').css('width', appliedWidth + 'px').css('height', '');
         }
         else {
           var maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
