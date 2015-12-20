@@ -27,11 +27,26 @@ $thumbnail-small-width: 50px;
       width: 100%;
       text-align: center;
       background: $bg-color;
+      white-space: nowrap;
+
+      .navigation_credits_box {
+        bottom: initial;
+
+        p {
+          display: none;
+        }
+      }
+
+      .navigation_share_box {
+        right: -50px;
+      }
+
+      .navigation_credits_box {
+        right: 0;
+      }
 
       .navigation_share_box, .navigation_credits_box {
         top: 100px;
-        height: 35px;
-        right: -40%;
 
         @include pageflow-progress-navigation-bar-small-width {
           top: $thumbnail-small-width;
@@ -161,7 +176,6 @@ $thumbnail-small-width: 50px;
       left: 0;
       margin: 6px 0 0 0;
       text-align: center;
-      overflow: hidden;
       white-space: nowrap;
 
       li {
@@ -169,6 +183,7 @@ $thumbnail-small-width: 50px;
         height: 18px;
         margin-right: 1px;
         display: inline-block;
+        @include box-sizing(border-box);
 
         &:last-child {
           margin-right: 0;
