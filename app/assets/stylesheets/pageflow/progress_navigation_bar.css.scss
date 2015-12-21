@@ -42,19 +42,19 @@ $header-button-enabled: true;
   .navi_hint {
     text-align: center;
     color: $nav-hint-color;
-    font-family: "SourceSansPro";
+    font-family: SourceSansPro;
     font-size: 11px;
     top: 50%;
     position: absolute;
     width: 86%;
     margin-top: 16px;
-    padding: 0px 7%;
+    padding: 0 7%;
   }
 
   @include pageflow-progress-mobile-variant {
+    opacity: 0;
     width: $progressbar-mobile-width;
     @include transition(opacity 0.4s ease 0.5s);
-    opacity: 0;
     @include transform(translateZ(0));
     -webkit-backface-visibility: hidden;
   }
@@ -77,7 +77,6 @@ $header-button-enabled: true;
     background-image: image-url('pageflow/progress_navigation_bar/indicator.png');
     position: absolute;
     right: 60px;
-    top: 4.05%;
     @include transition(opacity 0.3s linear);
     opacity: 1;
     top: 35px;
@@ -109,10 +108,9 @@ $header-button-enabled: true;
       overflow: visible;
     }
 
-
     .navigation_bar_buttons {
       @include transition(opacity 0.15s ease, right 0.3s ease);
-      left:0;
+      left: 0;
       opacity: 0;
       width: 87px;
       position: absolute;
@@ -124,7 +122,7 @@ $header-button-enabled: true;
         border-bottom: 1px solid $nav-button-hr;
 
         &:last-child {
-          border-bottom: 0px solid $nav-button-hr;
+          border-bottom: 0 solid $nav-button-hr;
         }
         position: relative;
         @include box-sizing(border-box);
@@ -134,7 +132,7 @@ $header-button-enabled: true;
         }
 
         > a {
-          height:100%;
+          height: 100%;
           width: 100%;
 
           span.button {
@@ -162,7 +160,7 @@ $header-button-enabled: true;
       height: 10%;
 
       &.mute {
-        height :20%;
+        height: 20%;
       }
     }
   }
@@ -201,8 +199,8 @@ $header-button-enabled: true;
     &:before {
       opacity: 0;
       main & {
-          @include transition(opacity 0.7s linear);
-        }
+        @include transition(opacity 0.7s linear);
+      }
     }
   }
 
@@ -286,7 +284,7 @@ $header-button-enabled: true;
     color: white;
     font-size: 1em;
     line-height: 1.1em;
-    font-family: sourcesanspro;
+    font-family: SourceSansPro;
 
     @include pageflow-progress-navigation-bar-box(-40px, 30px);
 
@@ -352,7 +350,7 @@ $header-button-enabled: true;
     font-size: 1em;
     min-width: 230px;
     min-height: 4px;
-    font-family: "sourcesanspro";
+    font-family: SourceSansPro;
     bottom: 0;
 
     a {
@@ -531,7 +529,6 @@ $header-button-enabled: true;
             cursor: default;
             background-color: $nav-active-page;
 
-
             img {
               border-left: 5px solid #A6D513;
             }
@@ -541,9 +538,9 @@ $header-button-enabled: true;
         li.chapter_beginning a {
           background-color: $nav-color;
 
-            &.in_active_chapter {
-              background-color: $nav-active-chapter-beginning;
-            }
+          &.in_active_chapter {
+            background-color: $nav-active-chapter-beginning;
+          }
         }
 
         img {
@@ -610,7 +607,7 @@ $header-button-enabled: true;
     }
 
     .volume-control {
-      margin: 0px 20px;
+      margin: 0 20px;
 
       .volume-slider {
         width: 5px;
