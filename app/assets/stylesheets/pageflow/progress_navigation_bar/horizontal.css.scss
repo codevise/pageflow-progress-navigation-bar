@@ -12,6 +12,30 @@ $thumbnail-small-width: 50px;
     display: none;
   }
 
+  @if ($header-button-enabled) {
+    .header_button {
+      display: block;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 26px;
+      height: 26px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 0;
+
+        .button {
+          color: white;
+          font-size: 22px;
+          @include fa-bars-icon;
+          background: none;
+        }
+      }
+    }
+  }
+
   .navigation_button_area {
     width: 100%;
     height: 100px;
@@ -55,12 +79,6 @@ $thumbnail-small-width: 50px;
 
       li.menu_li {
         display: none;
-      }
-
-      li.navigation_overview_item {
-        .navigation_bullet.navigation_index {
-          margin-top: 0;
-        }
       }
 
       li.navigation_menu.mute {
@@ -171,7 +189,11 @@ $thumbnail-small-width: 50px;
     height: 100%;
 
     .navigation_dots {
-      width: 100%;
+      @if ($header-button-enabled) {
+        width: calc(100% - 40px);
+      } @else {
+        width: 100%;
+      }
       height: 100%;
       left: 0;
       margin: 6px 0 0 0;
