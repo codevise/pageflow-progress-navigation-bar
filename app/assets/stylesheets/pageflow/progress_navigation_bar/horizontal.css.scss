@@ -62,7 +62,7 @@ $thumbnail-small-width: 50px;
       }
 
       .navigation_share_box {
-        right: -50px;
+        right: -62.5px;
       }
 
       .navigation_credits_box {
@@ -95,7 +95,7 @@ $thumbnail-small-width: 50px;
           .volume-control {
             text-align: center;
             display: inline-block;
-            margin: 20px 0 0 0;
+            margin: 26px 0 0 0;
 
             @include pageflow-progress-navigation-bar-small-width {
               margin: 7px 0 0 0;

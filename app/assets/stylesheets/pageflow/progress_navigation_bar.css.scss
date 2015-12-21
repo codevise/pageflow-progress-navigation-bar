@@ -174,7 +174,7 @@ $header-button-enabled: true;
     width: 122px;
 
     @include pageflow-progress-mobile-variant {
-      width: 14px;
+      width: $progressbar-mobile-width;
     }
 
     .navigation_button_area {
