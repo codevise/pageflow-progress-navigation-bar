@@ -57,7 +57,7 @@
       $('a.navigation_top', this.element).topButton();
 
       $('.navigation_bar_bottom', this.element)
-        .append($('.navigation_bar_top > li', this.element).slice(hasHomeButton ? 4 : 3));
+          .append($('.navigation_bar_top > li', this.element).slice(hasHomeButton ? 4 : 3));
 
       pageflow.slides.on('slideshowchangepage', function() {
         that.element.addClass('show_on_mobile');
@@ -66,8 +66,12 @@
         }, 1000);
       });
 
-      that.element.on('mouseenter', function() { that.element.addClass('hover'); });
-      that.element.on('mouseleave', function() { that.element.removeClass('hover'); });
+      that.element.on('mouseenter', function() {
+        that.element.addClass('hover');
+      });
+      that.element.on('mouseleave', function() {
+        that.element.removeClass('hover');
+      });
 
       /* keyboard / skiplinks */
 
@@ -88,14 +92,13 @@
       /* hide buttons on mobile devices */
       if (pageflow.features.has('mobile platform')) {
         that.element.find('.navigation_butten_area').hide();
-
       }
 
       /* header button */
       $('.navigation_main', this.element).click(function() {
         $(this)
-          .toggleClass('active')
-          .updateTitle();
+            .toggleClass('active')
+            .updateTitle();
         $('.header').toggleClass('active');
         that.element.toggleClass('header_active');
         that._toggleNavigationBar();
@@ -118,7 +121,7 @@
 
       var shareBox = $('.navigation_share_box', this.element),
           links = $('> a', shareBox);
-        shareBox.shareMenu({
+      shareBox.shareMenu({
         subMenu: $('.sub_share', shareBox),
         links: links,
         insertAfter: links.last(),
@@ -127,7 +130,7 @@
 
       /* pages */
       var pageLinks = $('.navigation_dots a', that.element),
-        target;
+          target;
 
       function registerHandler() {
         target = $(this);
@@ -193,22 +196,22 @@
 
       this._resizeDots();
 
-      $(window).on('resize', function () {
-        $(overlays).css("top","0");
+      $(window).on('resize', function() {
+        $(overlays).css("top", "0");
         that._resizeDots();
       });
 
-      $('.scroller', this.element).each(function () {
+      $('.scroller', this.element).each(function() {
         var scrollerOptions = {
           mouseWheel: true,
-          bounce    : false,
-          probeType : 2
+          bounce: false,
+          probeType: 2
         };
 
         /*
-          This is just a quick fix to detect IE10. We should
-          refactor this condition if we decide to use Modernizr
-          or another more global detection.
+         This is just a quick fix to detect IE10. We should
+         refactor this condition if we decide to use Modernizr
+         or another more global detection.
          */
         if (window.navigator.msPointerEnabled) {
           scrollerOptions.preventDefault = false;
@@ -241,8 +244,8 @@
         var fs = $('.navigation_fullscreen', this.element),
             fullscreenCallback = function(isFullScreen) {
               fs
-                .toggleClass('active', !!isFullScreen)
-                .updateTitle();
+                  .toggleClass('active', !!isFullScreen)
+                  .updateTitle();
             };
 
         fs.click(function() {
@@ -274,6 +277,7 @@
               $('body').off('touchstart', close);
             }
           }
+
           $('body').on('touchstart', close);
         }
       });
