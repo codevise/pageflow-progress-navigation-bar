@@ -6,14 +6,13 @@ $thumbnail-small-width: 50px;
   left: 0;
   height: 30px;
   width: 100%;
-  background: $bg-color;
 
   &:before {
     display: none;
   }
 
   @if ($header-button-enabled) {
-    .header_button {
+    .horizontal_header_button {
       display: block;
       position: absolute;
       right: 2px;
@@ -29,8 +28,12 @@ $thumbnail-small-width: 50px;
         .button {
           color: white;
           font-size: 22px;
-          @include fa-bars-icon;
           background: none;
+          @include fa-bars-icon;
+        }
+
+        .button.close {
+          @include fa-times-icon;
         }
       }
     }
@@ -41,6 +44,7 @@ $thumbnail-small-width: 50px;
     height: 100px;
     top: 30px;
     left: 0;
+    border: 0;
 
     @include pageflow-progress-navigation-bar-small-width {
       height: $thumbnail-small-width;
@@ -95,7 +99,7 @@ $thumbnail-small-width: 50px;
           .volume-control {
             text-align: center;
             display: inline-block;
-            margin: 26px 0 0 0;
+            margin: 20px 0 0 0;
 
             @include pageflow-progress-navigation-bar-small-width {
               margin: 7px 0 0 0;
@@ -187,6 +191,7 @@ $thumbnail-small-width: 50px;
     left: 0;
     width: 100%;
     height: 100%;
+    background: $bg-color;
 
     .navigation_dots {
       @if ($header-button-enabled) {

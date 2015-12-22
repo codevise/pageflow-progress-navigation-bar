@@ -2,6 +2,48 @@
 
 (function($) {
   $.widget('pageflow.progressNavigationBar', {
+
+    _toggleNavigationBar: function() {
+      var button = $('.horizontal_header_button .button');
+      if (button.hasClass('close')) {
+        $('.scroller').show();
+        $('.navigation_button_area').show();
+      } else {
+        $('.scroller').hide();
+        $('.navigation_button_area').hide();
+      }
+      button.toggleClass('close');
+    },
+
+    _resizeDots: function() {
+      var dots = $('.navigation_dots a', this.element),
+          pageDotsMaxSize = 20,
+          pageDotsMinSize = 1;
+
+      if (this.element.hasClass('horizontal')) {
+        var maxBarWidth = $('.navigation_dots').width();
+        var wantedWidth = Math.floor(maxBarWidth / dots.filter(':not(.filtered)').length);
+        var appliedWidth = (wantedWidth > pageDotsMaxSize) ? pageDotsMaxSize :
+            (wantedWidth < pageDotsMinSize) ? pageDotsMinSize : wantedWidth - 1;
+
+        $('.navigation_dots > li').css('width', appliedWidth + 'px').css('height', '');
+      }
+      else {
+        var maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
+            wantedHeight = maxBarHeight / dots.filter(':not(.filtered)').length,
+            appliedHeight = pageDotsMinSize;
+
+        if (wantedHeight <= pageDotsMaxSize && wantedHeight > pageDotsMinSize) {
+          appliedHeight = wantedHeight;
+        }
+        else if (wantedHeight > pageDotsMinSize) {
+          appliedHeight = pageDotsMaxSize;
+        }
+
+        $('.navigation_dots > li').css('height', Math.floor(appliedHeight) + 'px').css('width', '');
+      }
+    },
+
     _create: function() {
       var overlays = this.element.find('.navigation_site_detail'),
           that = this,
@@ -56,6 +98,7 @@
           .updateTitle();
         $('.header').toggleClass('active');
         that.element.toggleClass('header_active');
+        that._toggleNavigationBar();
       });
 
       /* open header through skiplinks */
@@ -63,6 +106,7 @@
         $('.navigation_main', that.element).addClass('active');
         $('.header').addClass('active');
         $(this.getAttribute('href')).select();
+        that._toggleNavigationBar();
       });
 
       /* share-button */
@@ -147,39 +191,11 @@
         });
       });
 
-      var resizeDots = function() {
-        var pageDotsMaxSize = 20,
-            pageDotsMinSize = 1;
-
-        if (that.element.hasClass('horizontal')) {
-          var maxBarWidth = $('.navigation_dots').width();
-          var wantedWidth = Math.floor(maxBarWidth / pageLinks.filter(':not(.filtered)').length);
-          var appliedWidth = (wantedWidth > pageDotsMaxSize) ? pageDotsMaxSize :
-              (wantedWidth < pageDotsMinSize) ? pageDotsMinSize : wantedWidth - 1;
-
-          $('.navigation_dots > li').css('width', appliedWidth + 'px').css('height', '');
-        }
-        else {
-          var maxBarHeight = $('#outer_wrapper').height() ? $('#outer_wrapper').height() : $('main').height(),
-              wantedHeight = maxBarHeight / pageLinks.filter(':not(.filtered)').length,
-              appliedHeight = pageDotsMinSize;
-
-          if (wantedHeight <= pageDotsMaxSize && wantedHeight > pageDotsMinSize) {
-            appliedHeight = wantedHeight;
-          }
-          else if (wantedHeight > pageDotsMinSize) {
-            appliedHeight = pageDotsMaxSize;
-          }
-
-          $('.navigation_dots > li').css('height', Math.floor(appliedHeight) + 'px').css('width', '');
-        }
-      };
-
-      resizeDots();
+      this._resizeDots();
 
       $(window).on('resize', function () {
         $(overlays).css("top","0");
-        resizeDots();
+        that._resizeDots();
       });
 
       $('.scroller', this.element).each(function () {
@@ -204,7 +220,7 @@
           scroller: scroller,
           scrollToActive: true,
           animationDuration: 400,
-          onFilterChange: resizeDots
+          onFilterChange: that._resizeDots()
         });
 
       });
