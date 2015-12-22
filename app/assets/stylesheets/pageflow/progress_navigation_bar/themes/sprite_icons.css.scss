@@ -5,6 +5,12 @@
     width: 42px;
   }
 
+  &.horizontal.js {
+    .navigation_button_area .navigation_bar_buttons li .button {
+      top: 15%;
+    }
+  }
+
   $normalOffset: -30px;
   $mousedownOffset: -140px;
   $hoverOffset: -85px;
