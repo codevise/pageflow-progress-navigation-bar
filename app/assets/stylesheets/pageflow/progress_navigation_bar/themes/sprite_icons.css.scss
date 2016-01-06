@@ -1,6 +1,8 @@
 .progress_navigation_bar {
+  $navigation-bar-sprite: "pageflow/themes/#{$theme-name}/menu_sprite.png" !default;
+
   .button, .navigation_mute, .navigation_share {
-    background-image: image-url("pageflow/themes/#{$theme-name}/menu_sprite.png");
+    background-image: image-url($navigation-bar-sprite);
     height: 42px;
     width: 42px;
   }

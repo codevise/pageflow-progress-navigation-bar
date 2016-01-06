@@ -19,8 +19,6 @@ $bg-color: $nav-bg-color;
 $nav-bg-color-transparent: $basic-background-color-transparent;
 
 @import "../mixins";
-@import "font_icons";
-//@import "sprite_icons";
 
 .progress_navigation_bar {
   @if $nav-display-header-button {
@@ -86,6 +84,14 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
     &.js a.scroll_indicator {
       background-image: image-url('pageflow/themes/default/scroll_indicator_sprite.png');
+    }
+
+    li {
+      > a {
+        &:hover .navi_hint, &.active .navi_hint {
+          color: $nav-color;
+        }
+      }
     }
 
     .navigation_share_box {

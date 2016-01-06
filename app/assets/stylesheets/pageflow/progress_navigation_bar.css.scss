@@ -145,10 +145,6 @@ $header-button-enabled: true;
               margin: -20px auto 0 23px;
             }
           }
-
-          &:hover .navi_hint, &.active .navi_hint {
-            color: $nav-hint-hover-color;
-          }
         }
       }
     }
