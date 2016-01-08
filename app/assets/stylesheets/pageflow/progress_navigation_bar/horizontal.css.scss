@@ -11,34 +11,6 @@ $thumbnail-small-width: 50px;
     display: none;
   }
 
-  @if ($header-button-enabled) {
-    .horizontal_header_button {
-      display: block;
-      position: absolute;
-      right: 2px;
-      top: 2px;
-      width: 26px;
-      height: 26px;
-
-      a {
-        display: block;
-        text-decoration: none;
-        padding: 0;
-
-        .button {
-          color: white;
-          font-size: 22px;
-          background: none;
-          @include fa-bars-icon;
-        }
-
-        .button.close {
-          @include fa-times-icon;
-        }
-      }
-    }
-  }
-
   &.hover, &:hover, &:focus, &.focus {
     .navigation_button_area {
       height: 100px;
@@ -208,11 +180,7 @@ $thumbnail-small-width: 50px;
     }
 
     .navigation_dots {
-      @if ($header-button-enabled) {
-        width: calc(100% - 40px);
-      } @else {
-        width: 100%;
-      }
+      width: 100%;
       height: 100%;
       left: 0;
       margin: 6px 0 0 0;

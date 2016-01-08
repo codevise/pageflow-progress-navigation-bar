@@ -22,6 +22,36 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
 .progress_navigation_bar {
   @if $nav-display-header-button {
+    &.horizontal .scroller .navigation_dots {
+      width: calc(100% - 40px);
+    }
+
+    .header_button {
+      display: block;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 26px;
+      height: 26px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 0;
+
+        .button {
+          color: white;
+          font-size: 22px;
+          background: none;
+          @include fa-bars-icon;
+        }
+
+        .button.close {
+          @include fa-times-icon;
+        }
+      }
+    }
+    
     .navigation_button_area .navigation_bar_buttons li {
       height: 11.11%;
 

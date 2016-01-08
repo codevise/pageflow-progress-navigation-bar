@@ -15,8 +15,6 @@ $nav-active-chapter: #6D772E;
 
 $progressbar-mobile-width: 14px;
 
-$header-button-enabled: true;
-
 @import "cross_dependant_styles";
 @import "./progress_navigation_bar/mixins";
 @import "./progress_navigation_bar/animations";
