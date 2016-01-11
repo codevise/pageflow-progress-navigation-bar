@@ -9,6 +9,7 @@ $nav-active-chapter-beginning: desaturate($main-color, 40%);
 $nav-hint-color: #A9A9A9 !default;
 $nav-display-header-button: false !default;
 $nav-display-overview-button: true !default;
+$nav-display-sharing-button: true !default;
 
 $nav-chapter-beginning: #afafaf;
 $nav-dot-even: #9B9B9B;
@@ -107,6 +108,12 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
       @if not $nav-display-overview-button {
         .navigation_overview_item {
+          display: none;
+        }
+      }
+
+      @if not $nav-display-sharing-button {
+        .navigation_menu.share {
           display: none;
         }
       }
