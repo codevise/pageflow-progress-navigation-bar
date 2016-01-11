@@ -1,5 +1,6 @@
 .progress_navigation_bar {
   $navigation-bar-sprite: "pageflow/themes/#{$theme-name}/menu_sprite.png" !default;
+  $progress-navigation-bar-use-home-icon-for-top-button: false !default;
 
   .button, .navigation_mute, .navigation_share {
     background-image: image-url($navigation-bar-sprite);
@@ -88,6 +89,9 @@
   }
 
   $top: -909px;
+  @if ($progress-navigation-bar-use-home-icon-for-top-button) {
+    $top: -155px;
+  }
   .navigation_top {
     .button {
       background-position: $top $normalOffset;
@@ -106,6 +110,7 @@
     }
   }
   .navigation_top.deactivated {
+    cursor: default;
     pointer-events: none;
     @include hover {
       .button {
@@ -115,8 +120,6 @@
     .button {
       background-position: $top $deactiveOffset;
     }
-
-    cursor: default;
   }
 
   .navigation_index {
