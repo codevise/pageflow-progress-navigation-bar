@@ -23,6 +23,7 @@ $thumbnail-small-width: 50px;
     top: 30px;
     left: 0;
     border: 0;
+    border-top: 1px solid transparent;
 
     @include pageflow-progress-navigation-bar-small-width {
       height: $thumbnail-small-width;
@@ -33,7 +34,6 @@ $thumbnail-small-width: 50px;
       width: 100%;
       text-align: center;
       white-space: nowrap;
-      background: $bg-color;
 
       &:after {
         background: none;
