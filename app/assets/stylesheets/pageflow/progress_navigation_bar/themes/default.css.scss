@@ -22,6 +22,25 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 @import "../mixins";
 
 .progress_navigation_bar {
+
+  .navigation_site_detail .thumbnail {
+    @extend %pageflow_page_type_thumbnail;
+
+    width: 170px;
+    height: 95px;
+
+    &:after {
+      position: absolute;
+      top: 79px;
+      left: 81px;
+      width: 38px;
+      height: 38px;
+      content: "";
+      background-size: 76px 38px;
+      background-repeat: no-repeat;
+    }
+  }
+
   @if $nav-display-header-button {
     &.horizontal .scroller .navigation_dots {
       width: calc(100% - 40px);
