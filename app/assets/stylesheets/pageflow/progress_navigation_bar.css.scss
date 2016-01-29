@@ -282,10 +282,6 @@ $progressbar-mobile-width: 14px;
     font-family: SourceSansPro;
 
     @include pageflow-progress-navigation-bar-box(-40px, 30px);
-
-    img {
-      margin-top: 12px;
-    }
   }
 
   .navigation_bar_buttons, .navigation_bar_bottom {

@@ -8,10 +8,8 @@
         var button = $('.header_button .button');
         if (button.hasClass('close')) {
           $('.scroller').show();
-          $('.navigation_button_area').show();
         } else {
           $('.scroller').hide();
-          $('.navigation_button_area').hide();
         }
         button.toggleClass('close');
       }
