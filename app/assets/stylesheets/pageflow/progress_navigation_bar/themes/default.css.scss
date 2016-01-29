@@ -51,16 +51,18 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
   .navigation_site_detail .thumbnail {
     @extend %pageflow_page_type_thumbnail;
 
+    position: relative;
     width: 170px;
     height: 95px;
+    margin-top: 12px;
 
     &:after {
+      content: "";
       position: absolute;
-      top: 79px;
-      left: 81px;
+      top: 28px;
+      left: 66px;
       width: 38px;
       height: 38px;
-      content: "";
       background-size: 76px 38px;
       background-repeat: no-repeat;
     }
