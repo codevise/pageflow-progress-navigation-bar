@@ -1,3 +1,15 @@
+/// Type of icons to use:
+///
+/// - `"icon-font"`: Circular buttons with font awesome icons.
+///
+/// - `"sprite"`: Custom icons from `icon_sprite.png` in theme
+///   directory.
+$progress-navigation-bar-icons: $widget-icons !default;
+
+$progress-navigation-bar-display-header-button: $navigation-display-header-button !default;
+
+// Legacy
+
 $nav-color: $main-color;
 $nav-font: $standard-font;
 
@@ -7,7 +19,6 @@ $nav-active-page: $main-color;
 $nav-active-chapter-beginning: desaturate($main-color, 40%);
 
 $nav-hint-color: #A9A9A9 !default;
-$nav-display-header-button: false !default;
 $nav-display-overview-button: true !default;
 $nav-display-sharing-button: true !default;
 
@@ -22,6 +33,14 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 @import "../mixins";
 
 .progress_navigation_bar {
+  @import "./default/icons/icon_font";
+  @import "./default/icons/sprite";
+
+  @if $progress-navigation-bar-icons == "sprite" {
+    @include progress-navigation-bar-icons-sprite;
+  } @else {
+    @include progress-navigation-bar-icons-icon-font;
+  }
 
   .navigation_site_detail .thumbnail {
     @extend %pageflow_page_type_thumbnail;
@@ -41,7 +60,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     }
   }
 
-  @if $nav-display-header-button {
+  @if $progress-navigation-bar-display-header-button {
     &.horizontal .scroller .navigation_dots {
       width: calc(100% - 40px);
     }

@@ -1,5 +1,5 @@
-.progress_navigation_bar {
-  $navigation-bar-sprite: "pageflow/themes/#{$theme-name}/menu_sprite.png" !default;
+@mixin progress-navigation-bar-icons-sprite {
+  $navigation-bar-sprite: "pageflow/themes/#{$theme-name}/icon_sprite.png" !default;
   $progress-navigation-bar-use-home-icon-for-top-button: false !default;
 
   .button, .navigation_mute, .navigation_share {
