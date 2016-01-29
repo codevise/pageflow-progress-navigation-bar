@@ -15,7 +15,7 @@ $nav-active-chapter: #6D772E;
 
 $progressbar-mobile-width: 14px;
 
-@import "cross_dependant_styles";
+@import "./progress_navigation_bar/cross_dependant_styles";
 @import "./progress_navigation_bar/mixins";
 @import "./progress_navigation_bar/animations";
 @import "./progress_navigation_bar/horizontal";
