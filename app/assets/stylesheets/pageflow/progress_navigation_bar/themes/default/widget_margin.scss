@@ -1,0 +1,25 @@
+@include pageflow-widget-margin("progress_navigation_bar", "right") {
+  @include desktop {
+    margin-right: 30px;
+  }
+
+  @include pad_portrait {
+    margin-right: 0;
+  }
+}
+
+@include pageflow-widget-margin("progress_navigation_bar", "right_max") {
+  @include desktop {
+    margin-right: 120px;
+  }
+
+  @include pad_portrait {
+    margin-right: 0;
+  }
+}
+
+@include pageflow-widget-margin("progress_navigation_bar_horizontal", "top") {
+  @include desktop {
+    margin-top: 30px;
+  }
+}

@@ -27,9 +27,3 @@ body .widget_progress_navigation_bar_present .navigation_mobile {
     right: 125px;
   }
 }
-
-.js .widget_progress_navigation_bar_present .videoWrapper {
-  @include desktop {
-    margin-right: 30px;
-  }
-}
