@@ -6,7 +6,14 @@
 ///   directory.
 $progress-navigation-bar-icons: $widget-icons !default;
 
+/// Display button to toggle header
 $progress-navigation-bar-display-header-button: $navigation-display-header-button !default;
+
+/// Display button to toggle overview
+$progress-navigation-bar-display-overview-button: $navigation-display-overview-button !default;
+
+/// Display social share menu
+$progress-navigation-bar-display-share-button: $navigation-display-share-button !default;
 
 // Legacy
 
@@ -19,8 +26,6 @@ $nav-active-page: $main-color;
 $nav-active-chapter-beginning: desaturate($main-color, 40%);
 
 $nav-hint-color: #A9A9A9 !default;
-$nav-display-overview-button: true !default;
-$nav-display-sharing-button: true !default;
 
 $nav-chapter-beginning: #afafaf;
 $nav-dot-even: #9B9B9B;
@@ -91,7 +96,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
         }
       }
     }
-    
+
     .navigation_button_area .navigation_bar_buttons li {
       height: 11.11%;
 
@@ -133,8 +138,14 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     }
   }
 
-  @if not $nav-display-overview-button {
+  @if not $progress-navigation-bar-display-overview-button {
     .navigation_overview_item {
+      display: none;
+    }
+  }
+
+  @if not $progress-navigation-bar-display-share-button {
+    .navigation_menu.share {
       display: none;
     }
   }
@@ -143,15 +154,15 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     background: $bg-color;
 
     .navigation_button_area .navigation_bar_buttons {
-      background: $bg-color;
+      background: $nav-bg-color-transparent;
 
-      @if not $nav-display-overview-button {
+      @if not $progress-navigation-bar-display-overview-button {
         .navigation_overview_item {
           display: none;
         }
       }
 
-      @if not $nav-display-sharing-button {
+      @if not $progress-navigation-bar-display-share-button {
         .navigation_menu.share {
           display: none;
         }
