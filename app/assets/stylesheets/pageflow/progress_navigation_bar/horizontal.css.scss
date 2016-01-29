@@ -179,24 +179,66 @@ $thumbnail-small-width: 50px;
       background-color: transparent;
     }
 
-    .navigation_dots {
-      width: 100%;
-      height: 100%;
-      left: 0;
-      margin: 6px 0 0 0;
-      text-align: center;
-      white-space: nowrap;
-
-      li {
-        width: 20px;
-        height: 18px;
-        margin-right: 1px;
-        display: inline-block;
-        @include box-sizing(border-box);
-
-        &:last-child {
-          margin-right: 0;
+    li {
+      &.animate_in {
+        &.moving_forwards {
+          @include animation(pageflow-progress-navigation-bar-slide-in-from-bottom2 0.4s ease-out);
         }
+
+        &.moving_backwards {
+          @include animation(pageflow-progress-navigation-bar-slide-in-from-top2 0.4s ease-out);
+        }
+
+        &.moving_down {
+          @include animation(pageflow-progress-navigation-bar-slide-in-from-right2 0.4s ease-out);
+        }
+
+        &.moving_up {
+          @include animation(pageflow-progress-navigation-bar-slide-in-from-left2 0.4s ease-out);
+        }
+      }
+
+      &.animate_out {
+        &.moving_forwards {
+          @include animation(pageflow-progress-navigation-bar-slide-out-to-top2 0.4s ease-in);
+          opacity: 0;
+        }
+
+        &.moving_backwards {
+          @include animation(pageflow-progress-navigation-bar-slide-out-to-bottom2 0.4s ease-in);
+          opacity: 0;
+        }
+
+        &.moving_down {
+          @include animation(pageflow-progress-navigation-bar-slide-out-to-left2 0.4s ease-in);
+          @include transform(translate3d(0, -50px, 0));
+        }
+
+        &.moving_up {
+          @include animation(pageflow-progress-navigation-bar-slide-out-to-right2 0.4s ease-in);
+          @include transform(translate3d(0, 50px, 0));
+        }
+      }
+    }
+  }
+
+  .navigation_dots {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin: 6px 0 0 0;
+    text-align: center;
+    white-space: nowrap;
+
+    li {
+      width: 20px;
+      height: 18px;
+      margin-right: 1px;
+      display: inline-block;
+      @include box-sizing(border-box);
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
