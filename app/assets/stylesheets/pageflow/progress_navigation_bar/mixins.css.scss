@@ -18,6 +18,10 @@
   @include phone {
     @content;
   }
+
+  @include pad_portrait {
+    @content;
+  }
 }
 
 @mixin pageflow-progress-navigation-bar-transparent-background {
