@@ -76,7 +76,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     .header_button {
       display: block;
       position: absolute;
-      right: 2px;
+      right: 7px;
       top: 2px;
       width: 26px;
       height: 26px;
@@ -87,14 +87,14 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
         padding: 0;
 
         .button {
-          color: white;
-          font-size: 22px;
-          background: none;
-          @include fa-bars-icon;
+          width: 28px;
+          height: 28px;
+          background-image: image-url("pageflow/progress_navigation_bar/indicator.png");
+          background-position: 0 0;
         }
 
         .button.close {
-          @include fa-times-icon;
+          background-position: -28px 0;
         }
       }
     }

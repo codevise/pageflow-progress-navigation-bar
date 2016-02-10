@@ -60,7 +60,7 @@ $thumbnail-small-width: 50px;
         top: 100px;
 
         @include pageflow-progress-navigation-bar-small-width {
-          top: $thumbnail-small-width;
+          top: 70px;
         }
       }
 
@@ -157,6 +157,7 @@ $thumbnail-small-width: 50px;
 
     &:after {
       background-color: transparent;
+      opacity: 0.9;
     }
 
     li {
