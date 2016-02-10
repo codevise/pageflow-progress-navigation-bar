@@ -1,324 +1,139 @@
 @mixin progress-navigation-bar-icons-sprite {
-  $navigation-bar-sprite: "pageflow/themes/#{$theme-name}/icon_sprite.png" !default;
-  $progress-navigation-bar-use-home-icon-for-top-button: false !default;
+  $progress-navigation-bar-use-fullscreen-exit-icon: false !default;
 
-  .button, .navigation_mute, .navigation_share {
-    background-image: image-url($navigation-bar-sprite);
+  .button,
+  .navigation_mute {
+    @extend %pageflow_sprite_icon;
     height: 42px;
     width: 42px;
   }
 
-  &.horizontal.js {
-    .navigation_button_area .navigation_bar_buttons li .button {
-      top: 15%;
+  .navigation_bar_buttons {
+    .navigation_main {
+      @include pageflow-sprite-icon-menu($target: ".button");
+    }
+
+    .navigation_main.active {
+      @include pageflow-sprite-icon-close-header($target: ".button");
     }
   }
 
-  $normalOffset: -30px;
-  $mousedownOffset: -140px;
-  $hoverOffset: -85px;
-  $deactiveOffset: -195px;
-
-  .navigation_button_area .navigation_bar_buttons:after,
-  &.js .scroller:after {
-    background-color: $nav-bg-color;
-    opacity: 0.9;
-  }
-
-  &.js .scroller ul li {
-    &.chapter_odd a.active, &.chapter_even a.active, a.active {
-      background-color: $nav-color;
-    }
-  }
-
-  .navigation_main {
-    $main: -22px;
-    .button {
-      background-position: $main $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $main $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $main $mousedownOffset;
-      }
-    }
-
-    &.active {
-      $mainActive: -89px;
-      .button {
-        background-position: $mainActive $hoverOffset;
-      }
-
-      @include hover {
-        .button {
-          background-position: $mainActive $hoverOffset;
-        }
-      }
-
-      @include pressed {
-        .button {
-          background-position: $mainActive $hoverOffset;
-        }
-      }
-    }
-  }
-
-  $home: -155px;
   .navigation_home {
-    .button {
-      background-position: $home $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $home $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $home $mousedownOffset;
-      }
-    }
+    @include pageflow-sprite-icon-home($target: ".button");
   }
 
-  $top: -909px;
-  @if ($progress-navigation-bar-use-home-icon-for-top-button) {
-    $top: -155px;
-  }
   .navigation_top {
-    .button {
-      background-position: $top $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $top $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $top $mousedownOffset;
-      }
-    }
+    @include pageflow-sprite-icon-top($target: ".button");
   }
+
   .navigation_top.deactivated {
-    cursor: default;
-    pointer-events: none;
-    @include hover {
-      .button {
-        background-position: $top $deactiveOffset;
-      }
-    }
-    .button {
-      background-position: $top $deactiveOffset;
-    }
+    @include pageflow-sprite-icon-top("disabled", $target: ".button");
   }
 
   .navigation_index {
-    $index: -222px;
-    .button {
-      background-position: $index $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $index $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $index $mousedownOffset;
-      }
-    }
-
-    &.active .button {
-      background-position: $index $hoverOffset;
-
-      @include pressed {
-        background-position: $index $mousedownOffset;
-      }
-    }
+    @include pageflow-sprite-icon-overview($target: ".button");
   }
 
-  $fullscreen: -289px;
+  .navigation_index.active {
+    @include pageflow-sprite-icon-overview("active", $target: ".button");
+  }
+
   .navigation_fullscreen {
-    .button {
-      background-position: $fullscreen $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $fullscreen $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $fullscreen $mousedownOffset;
-      }
-    }
+    @include pageflow-sprite-icon-fullscreen($target: ".button");
   }
+
   .navigation_fullscreen.active {
-    .button {
-      background-position: $fullscreen $hoverOffset;
-    }
-
-    @include pressed {
-      .button {
-        background-position: $fullscreen $mousedownOffset;
-      }
+    @if ($progress-navigation-bar-use-fullscreen-exit-icon) {
+      @include pageflow-sprite-icon-fullscreen-exit($target: ".button");
+    } @else {
+      @include pageflow-sprite-icon-fullscreen("active");
     }
   }
 
-  $hide_text: -670px;
   .navigation_hide_text {
-    .button {
-      background-position: $hide_text $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $hide_text $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $hide_text -141px;
-      }
-    }
+    @include pageflow-sprite-icon-hide-text($target: ".button");
   }
+
   .navigation_hide_text.active {
-    .button {
-      background-position: $hide_text $hoverOffset;
-    }
-
-    @include pressed {
-      .button {
-        background-position: $hide_text -141px;
-      }
-    }
+    @include pageflow-sprite-icon-hide-text("active", $target: ".button");
   }
 
-  .navigation_mute {
-    background-position: -355px $normalOffset;
-  }
-  .navigation_mute.muted {
-    background-position: -489px $normalOffset;
-  }
-  .navigation_volume_box {
-    @include hover {
-      + a .navigation_mute {
-        background-position: -355px $hoverOffset;
-      }
-    }
-  }
-  .navigation_volume_box {
-    @include hover {
-      + a .navigation_mute.muted {
-        background-position: -489px $hoverOffset;
-      }
-    }
-  }
-  .navigation_share {
-    background-position: -555px $normalOffset;
-  }
-  .navigation_share_box {
-    @include hover {
-      + a .navigation_share {
-        background-position: -555px $hoverOffset;
-      }
-    }
-  }
-  .navigation_credits_button {
-    $credits: -622px;
-    .button {
-      background-position: $credits $normalOffset;
-    }
-
-    @include hover {
-      .button {
-        background-position: $credits $hoverOffset;
-      }
-    }
-
-    @include pressed {
-      .button {
-        background-position: $credits -141px;
-      }
-    }
-  }
-  .share_google {
-    background-position: -855px -39px;
-  }
-  .share_twitter {
-    background-position: -789px -39px;
-  }
-  .share_facebook {
-    background-position: -718px -39px;
+  .navigation_menu.share {
+    @include pageflow-sprite-icon-share($target: ".navigation_share.button");
   }
 
-  a {
-    .navigation_mute {
-      @include pressed {
-        background-position: -355px $mousedownOffset;
+  .navigation_menu.credits {
+    @include pageflow-sprite-icon-credits($target: ".button");
+  }
+
+  .share.google {
+    @include pageflow-sprite-icon-google($offset: -5px, $target: ".button");
+  }
+
+  .share.twitter {
+    @include pageflow-sprite-icon-twitter($offset: -5px, $target: ".button");
+  }
+
+  .share.facebook {
+    @include pageflow-sprite-icon-facebook($offset: -5px, $target: ".button");
+  }
+
+  .volume-control {
+    &:before,
+    &:after {
+      @extend %pageflow_sprite_icon;
+      content: "";
+      position: absolute;
+      width: 27px;
+      height: 27px;
+    }
+
+    &:before {
+      @include pageflow-sprite-icon-volume-down;
+    }
+
+    &:after {
+      @include pageflow-sprite-icon-volume-up;
+    }
+  }
+
+  &.horizontal {
+    .volume-control {
+      &:before,
+      &:after {
+        top: -2px;
       }
 
-      &.muted {
-        @include pressed {
-          background-position: -489px $mousedownOffset;
-        }
+      &:before {
+        left: -5px;
+      }
+
+      &:after {
+        right: -5px;
       }
     }
-    .navigation_share {
-      @include pressed {
-        background-position: -555px $mousedownOffset;
+  }
+
+  &.vertical {
+    .volume-control {
+      &:before,
+      &:after {
+        left: 10px;
       }
-    }
-    .share_google {
-      @include pressed {
-        background-position: -855px -145px;
+
+      &:before {
+        top: 4%;
       }
-    }
-    .share_twitter {
-      @include pressed {
-        background-position: -789px -145px;
-      }
-    }
-    .share_facebook {
-      @include pressed {
-        background-position: -718px -145px;
+
+      &:after {
+        bottom: 4%;
       }
     }
 
-    @include hover {
-      .navigation_mute {
-        background-position: -355px $hoverOffset;
-
-        &.muted {
-          background-position: -489px $hoverOffset;
-        }
-      }
-      .navigation_share {
-        background-position: -555px $hoverOffset;
-      }
-      .share_google {
-        background-position: -855px -92px;
-      }
-      .share_twitter {
-        background-position: -789px -92px;
-      }
-      .share_facebook {
-        background-position: -718px -92px;
+    @include pageflow-progress-navigation-bar-small-height {
+      .volume-control:before,
+      .volume-control:after {
+        display: none;
       }
     }
   }
