@@ -58,11 +58,6 @@ $progressbar-mobile-width: 14px;
     -webkit-backface-visibility: hidden;
   }
 
-  &.show_on_mobile {
-    opacity: 1;
-    @include transition(opacity 0.4s ease);
-  }
-
   position: absolute;
   right: 0;
   top: 0;

@@ -1,4 +1,8 @@
 .js.progress_navigation_bar.vertical {
+  &.show_on_mobile {
+    opacity: 1;
+    @include transition(opacity 0.4s ease);
+  }
 
   .header_button  {
     display: none;
