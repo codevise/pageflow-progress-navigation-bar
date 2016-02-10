@@ -1,4 +1,7 @@
-@mixin progress-navigation-bar-icons-icon-font {
+@mixin progress-navigation-bar-icons-icon-font(
+  $button-background-color: rgb(219, 219, 219),
+  $active-button-background-color: $main-color
+) {
   .navigation_button_area .navigation_bar_buttons {
 
     .navigation_bullet, .navigation_menu > a {
@@ -11,15 +14,13 @@
         width: 28px;
         height: 28px;
         display: block;
-        background: -webkit-linear-gradient(-75deg, rgba(255, 255, 255, 0.71), rgba(0, 0, 0, 0.32));
         box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.2);
         border-radius: 18px;
         color: rgba(0, 0, 0, 0.75);
         cursor: pointer;
         margin: -25px auto 0 30px;
         position: relative;
-        background-color: rgb(219, 219, 219) !important;
-        @include shine-gradient;
+        background-color: $button-background-color !important;
 
         @include pageflow-progress-navigation-bar-small-height {
           margin: -14px auto 0 30px;
@@ -27,7 +28,7 @@
       }
 
       &:hover .button, &.active .button {
-        background-color: $nav-color !important;
+        background-color: $active-button-background-color !important;
         -webkit-mask-image: none;
         color: rgba(255, 255, 255, 0.9);
         text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
@@ -111,22 +112,6 @@
     }
 
     .navigation_menu {
-      .navigation_mute {
-        font-weight: bold;
-
-        @include fa-volume-up-icon;
-
-        &.muted {
-
-          @include fa-volume-off-icon;
-        }
-        &.muted:before {
-          margin-right: 2px;
-        }
-      }
-    }
-
-    .navigation_menu {
       .navigation_share {
         font-weight: bold;
 
@@ -163,6 +148,51 @@
     }
     .share_twitter {
       @include fa-twitter-icon;
+    }
+  }
+
+  .volume-control:before,
+  .volume-slider:before {
+    color: $button-background-color;
+    position: absolute;
+  }
+
+  .volume-control {
+    @include fa-volume-down-icon;
+  }
+
+  .volume-slider {
+    @include fa-volume-up-icon;
+  }
+
+  &.horizontal {
+    .volume-control:before {
+      left: 0;
+      top: 12px;
+    }
+
+    .volume-slider:before {
+      right: -25px;
+      top: -8px;
+    }
+  }
+
+  &.vertical {
+    .volume-control:before {
+      left: 19px;
+      top: 8%;
+    }
+
+    .volume-slider:before {
+      left: -3px;
+      bottom: -26px;
+    }
+
+    @include pageflow-progress-navigation-bar-small-height {
+      .volume-control:before,
+      .volume-slider:before {
+        display: none;
+      }
     }
   }
 }

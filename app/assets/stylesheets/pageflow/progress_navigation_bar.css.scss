@@ -527,7 +527,7 @@ $progressbar-mobile-width: 14px;
       .volume-control {
         height: 100%;
 
-        &:before, &:after, .volume-level:before {
+        .volume-level:before {
           background-image: image-url('pageflow/progress_navigation_bar/volume_control_sprite.png');
           position: absolute;
           width: 28px;
@@ -536,27 +536,11 @@ $progressbar-mobile-width: 14px;
           background-repeat: no-repeat;
           top: 8px;
         }
-
-        &:before {
-          background-position: -34px top;
-          left: 32px;
-          bottom: 6%;
-          top: initial;
-        }
-        &:after {
-          background-position: -3px top;
-          left: 32px;
-          top: 6%;
-        }
-        &:after, &:before {
-          @include pageflow-progress-navigation-bar-small-height {
-            display: none;
-          }
-        }
       }
     }
 
     .volume-control {
+      position: relative;
       margin: 0 20px;
 
       .volume-slider {
@@ -565,7 +549,7 @@ $progressbar-mobile-width: 14px;
         background-color: gray;
         top: 20%;
         position: absolute;
-        left: 40px;
+        left: 20px;
 
         @include pageflow-progress-navigation-bar-small-height {
           top: 10%;
