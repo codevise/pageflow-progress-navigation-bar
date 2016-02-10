@@ -32,6 +32,10 @@
     }
   }
 
+  .navigation_credits_box {
+    bottom: 0;
+  }
+
   .navi_hint {
     @include pageflow-progress-navigation-bar-small-height {
       display: none;
