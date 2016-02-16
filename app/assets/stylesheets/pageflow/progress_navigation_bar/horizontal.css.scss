@@ -7,6 +7,10 @@ $thumbnail-small-width: 50px;
   height: 30px;
   width: 100%;
 
+  @include pageflow-progress-mobile-variant {
+    display: none;
+  }
+
   &:before {
     display: none;
   }
