@@ -118,6 +118,9 @@
       }).blur(function() {
         $(this).parents('.navigation_menu').removeClass('focused');
       });
+      $('.navigation_menu_box', this.element).on('mouseleave', function() {
+        $(this).parents('.navigation_menu').removeClass('focused');
+      });
 
       var shareBox = $('.navigation_share_box', this.element),
           links = $('> a', shareBox);
