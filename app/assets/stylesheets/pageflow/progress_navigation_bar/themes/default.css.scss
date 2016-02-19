@@ -178,6 +178,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     }
 
     .navigation_credits_box a {
+      @extend %anchor;
       color: $main-color;
     }
 
