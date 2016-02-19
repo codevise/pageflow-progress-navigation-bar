@@ -68,14 +68,26 @@
 
   .share.google {
     @include pageflow-sprite-icon-google($offset: -5px, $target: ".button");
+
+    &.active {
+      @include pageflow-sprite-icon-google("active", $offset: -5px, $target: ".button");
+    }
   }
 
   .share.twitter {
     @include pageflow-sprite-icon-twitter($offset: -5px, $target: ".button");
+
+    &.active {
+      @include pageflow-sprite-icon-twitter("active", $offset: -5px, $target: ".button");
+    }
   }
 
   .share.facebook {
     @include pageflow-sprite-icon-facebook($offset: -5px, $target: ".button");
+
+    &.active {
+      @include pageflow-sprite-icon-facebook("active", $offset: -5px, $target: ".button");
+    }
   }
 
   .volume-control {
