@@ -2,6 +2,6 @@ de:
   pageflow:
     progress_navigation_bar:
       vertical:
-        widget_type_name: Vertikale Navigationsleiste mit Fortschrittsbalken
+        widget_type_name: Navigationsleiste mit Fortschrittsbalken (vertikal)
       horizontal:
-        widget_type_name: Horizontale Navigationsleiste mit Fortschrittsbalken
+        widget_type_name: Navigationsleiste mit Fortschrittsbalken (horizontal)
