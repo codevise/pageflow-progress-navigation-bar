@@ -208,6 +208,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
         }
       }
 
+      a.active,
       a:hover {
         p {
           color: $nav-color;
