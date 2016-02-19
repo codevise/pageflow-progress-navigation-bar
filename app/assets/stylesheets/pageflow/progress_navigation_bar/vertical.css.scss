@@ -46,6 +46,13 @@
     }
   }
 
+  .scroller ul {
+    @include pageflow-progress-mobile-variant {
+      right: 3px;
+      width: 8px;
+    }
+  }
+
   .scroller li {
     &.animate_in {
       &.moving_forwards {
