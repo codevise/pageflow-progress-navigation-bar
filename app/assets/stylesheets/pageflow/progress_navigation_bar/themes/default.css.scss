@@ -35,8 +35,8 @@ $nav-bg-color: $basic-background-color;
 $bg-color: $nav-bg-color;
 $nav-bg-color-transparent: $basic-background-color-transparent;
 
-@import "./default/widget_margin";
 @import "../mixins";
+@import "./default/widget_margin";
 
 .progress_navigation_bar {
   @import "./default/icons/icon_font";

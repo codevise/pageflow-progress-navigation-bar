@@ -16,8 +16,10 @@ body .widget_progress_navigation_bar_present .navigation_mobile {
   }
 }
 
-.navigation_mobile, .navigation_mobile > * {
-  body.has_mobile_platform .widget_progress_navigation_bar_present & {
+body.has_mobile_platform .widget_progress_navigation_bar_present,
+body.has_mobile_platform .widget_progress_navigation_bar_horizontal_present {
+  .navigation_mobile,
+  .navigation_mobile > * {
     display: block;
   }
 }
