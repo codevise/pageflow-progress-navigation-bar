@@ -12,12 +12,7 @@
       <span class="navi_hint"><%= t('pageflow.public.first_page') %></span>
     </a>
   </li>
-  <li class="navigation_overview_item">
-    <a class="navigation_bullet navigation_index" tabindex="2" title="<%= t('pageflow.public.open_overview') %>" data-active-title="<%= t('pageflow.public.close_overview') %>">
-      <span class="button"></span>
-      <span class="navi_hint"><%= t('pageflow.public.overview') %></span>
-    </a>
-  </li>
+  <%= render('pageflow/progress_navigation_bar/widget/overview_button', overview_button: entry.overview_button) %>
   <li class="fullscreen">
     <a class="navigation_bullet navigation_fullscreen" tabindex="2" title="<%= t('pageflow.public.enter_fullscreen') %>" data-active-title="<%= t('pageflow.public.leave_fullscreen') %>">
       <span class="button"></span>
