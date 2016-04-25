@@ -1,3 +1,6 @@
+// Make room for narrow progress navigation bar that is displayed
+// during page transitions.
+
 body .widget_progress_navigation_bar_present .navigation_mobile {
   .menu.index {
     right: 20px;
@@ -16,10 +19,19 @@ body .widget_progress_navigation_bar_present .navigation_mobile {
   }
 }
 
+// Progress navigation bar is not compatible with touch interfaces.
+// Use default mobile navigation instead. Since the mobile navigation
+// comes with its own parent page widget, hide the parent page box
+// which would otherwise also be displayed on iPad landscape.
+
 body.has_mobile_platform .widget_progress_navigation_bar_present,
 body.has_mobile_platform .widget_progress_navigation_bar_horizontal_present {
   .navigation_mobile,
   .navigation_mobile > * {
     display: block;
+  }
+
+  .parent_page_box {
+    display: none;
   }
 }
