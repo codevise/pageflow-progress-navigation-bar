@@ -1,8 +1,11 @@
 # coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'pageflow/progress_navigation_bar/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'pageflow-progress-navigation-bar'
-  spec.version       = '0.4.0.alpha'
+  spec.version       = Pageflow::ProgressNavigationBar::VERSION
   spec.authors       = ['Codevise Solutions Ltd.']
   spec.email         = ['info@codevise.de']
   spec.summary       = 'Pageflow navigation widget.'
@@ -18,4 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
+
+  # Semantic versioning rake tasks
+  spec.add_development_dependency 'semmy', '~> 0.2'
 end
