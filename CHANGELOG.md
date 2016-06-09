@@ -1,10 +1,23 @@
 # CHANGELOG
 
-### Changes on `master`
+### Version 0.4.0
 
-[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.3.0...master)
+2016-06-09
 
-None so far.
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.3.0...v0.4.0)
+
+- Decouple from overview widget
+  ([#13](https://github.com/codevise/pageflow-progress-navigation-bar/pull/13))
+- Display mobile navigation on narrow desktop browsers
+  ([#11](https://github.com/codevise/pageflow-progress-navigation-bar/pull/11))
+- Animate storylines
+  ([#10](https://github.com/codevise/pageflow-progress-navigation-bar/pull/10))
+- Add pageflow-public-i18n gem to gemspec
+  ([#9](https://github.com/codevise/pageflow-progress-navigation-bar/pull/9))
+- Remove display magic
+  ([#7](https://github.com/codevise/pageflow-progress-navigation-bar/pull/7))
+- Extract publicly visible i18n strings from locale
+  ([#5](https://github.com/codevise/pageflow-progress-navigation-bar/pull/5))
 
 ### Version 0.3.0
 
