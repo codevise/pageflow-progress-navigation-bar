@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### Changes on `master`
+
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.4.0...master)
+
+None so far.
+
 ### Version 0.4.0
 
 2016-06-09
