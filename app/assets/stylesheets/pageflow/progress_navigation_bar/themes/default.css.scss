@@ -36,8 +36,12 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 @import "./default/widget_margin";
 
 .progress_navigation_bar {
+  @import "./default/buttons";
+  @import "./default/credits";
   @import "./default/icons/icon_font";
   @import "./default/icons/sprite";
+  @import "./default/menu_boxes";
+  @import "./default/share_box";
 
   @if $progress-navigation-bar-icons == "sprite" {
     @include progress-navigation-bar-icons-sprite;
@@ -162,25 +166,12 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
       background-color: $nav-bg-color-transparent;
     }
 
-    .navigation_credits_box a {
-      @extend %anchor;
-      color: $main-color;
-    }
-
     &.js .navigation_bar_bottom li.fullscreen {
       height: auto;
     }
 
     &.js a.scroll_indicator {
       background-image: image-url('pageflow/themes/default/scroll_indicator_sprite.png');
-    }
-
-    li {
-      > a {
-        &:hover .navi_hint, &.active .navi_hint {
-          color: $nav-color;
-        }
-      }
     }
 
     .navigation_share_box {
