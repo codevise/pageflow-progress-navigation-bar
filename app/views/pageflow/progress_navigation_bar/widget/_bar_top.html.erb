@@ -12,12 +12,7 @@
       <span class="navi_hint"><%= t('pageflow.public.first_page') %></span>
     </a>
   </li>
-  <li class="navigation_overview_item">
-    <a class="navigation_bullet navigation_index" tabindex="2" title="<%= t('pageflow.public.open_overview') %>" data-active-title="<%= t('pageflow.public.close_overview') %>">
-      <span class="button"></span>
-      <span class="navi_hint"><%= t('pageflow.public.overview') %></span>
-    </a>
-  </li>
+  <%= render('pageflow/progress_navigation_bar/widget/overview_button', overview_button: entry.overview_button) %>
   <li class="fullscreen">
     <a class="navigation_bullet navigation_fullscreen" tabindex="2" title="<%= t('pageflow.public.enter_fullscreen') %>" data-active-title="<%= t('pageflow.public.leave_fullscreen') %>">
       <span class="button"></span>
@@ -39,6 +34,7 @@
         </div>
       </div>
     </div>
+    <span class="navi_hint"><%= t('pageflow.public.volume') %></span>
   </li>
   <li class="navigation_menu share" tabindex="2">
     <div class="navigation_menu_box navigation_share_box">
@@ -55,7 +51,7 @@
       <span class="navi_hint"><%= t('pageflow.public.share') %></span>
     </a>
   </li>
-  <li class="navigation_menu" tabindex="2">
+  <li class="navigation_menu credits" tabindex="2">
     <div class="navigation_menu_box navigation_credits_box">
       <%= render 'pageflow/entries/navigation/credits_box_content', :entry => entry %>
     </div>

@@ -1,0 +1,82 @@
+$pageflow-progress-navigation-bar-v-translation: 100px;
+$pageflow-progress-navigation-bar-h-translation: 50px;
+
+@include keyframes(pageflow-progress-navigation-bar-slide-in-from-top2) {
+  0% {
+    @include transform(translate3d(-$pageflow-progress-navigation-bar-v-translation, 0, 0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-in-from-bottom2) {
+  0% {
+    @include transform(translate3d($pageflow-progress-navigation-bar-v-translation, 0, 0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-out-to-top2) {
+  0% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translate3d(-$pageflow-progress-navigation-bar-v-translation, 0, 0));
+    opacity: 0;
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-out-to-bottom2) {
+  0% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+  100% {
+    @include transform(translate3d($pageflow-progress-navigation-bar-v-translation, 0, 0));
+    opacity: 0;
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-in-from-right2) {
+  0% {
+    @include transform(translate3d(0, $pageflow-progress-navigation-bar-h-translation, 0));
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-in-from-left2) {
+  0% {
+    @include transform(translate3d(0, -$pageflow-progress-navigation-bar-h-translation, 0));
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-out-to-right2) {
+  0% {
+    @include transform(translate3d(0, 0, 0));
+  }
+  100% {
+    @include transform(translate3d(0, $pageflow-progress-navigation-bar-h-translation, 0));
+  }
+}
+
+@include keyframes(pageflow-progress-navigation-bar-slide-out-to-left2) {
+  0% {
+    @include transform(translate3d(0, 0, 0));
+  }
+  100% {
+    @include transform(translate3d(0, -$pageflow-progress-navigation-bar-h-translation, 0));
+  }
+}

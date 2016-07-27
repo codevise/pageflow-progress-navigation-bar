@@ -6,3 +6,9 @@ pageflow.widgetTypes.register('progress_navigation_bar', {
     element.progressNavigationBar();
   }
 });
+
+pageflow.widgetTypes.register('progress_navigation_bar_horizontal', {
+  enhance: function(element) {
+    element.progressNavigationBar();
+  }
+});

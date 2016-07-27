@@ -1,0 +1,23 @@
+@include pageflow-widget-margin("progress_navigation_bar", "right") {
+  margin-right: 30px;
+
+  @include pageflow-progress-mobile-variant {
+    margin-right: 0;
+  }
+}
+
+@include pageflow-widget-margin("progress_navigation_bar", "right_max") {
+  margin-right: 120px;
+
+  @include pageflow-progress-mobile-variant {
+    margin-right: 0;
+  }
+}
+
+@include pageflow-widget-margin("progress_navigation_bar_horizontal", "top") {
+  margin-top: 30px;
+
+  @include pageflow-progress-mobile-variant {
+    margin-top: 0;
+  }
+}
