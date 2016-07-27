@@ -1,0 +1,209 @@
+$thumbnail-width: 125px;
+$thumbnail-small-width: 50px;
+
+.js.progress_navigation_bar.horizontal {
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+
+  &:before {
+    display: none;
+  }
+
+  &.hover, &:hover, &:focus, &.focus {
+    .navigation_button_area {
+      height: 100px;
+    }
+  }
+
+  .navigation_button_area {
+    width: 100%;
+    height: 0;
+    top: 30px;
+    left: 0;
+    border: 0;
+    border-top: 1px solid transparent;
+
+    @include pageflow-progress-navigation-bar-small-width {
+      height: $thumbnail-small-width;
+    }
+
+    .navigation_bar_buttons {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+
+      &:after {
+        background: none;
+        opacity: 0;
+      }
+
+      .navigation_credits_box {
+        bottom: initial;
+
+        p {
+          display: none;
+        }
+      }
+
+      .navigation_share_box {
+        right: -62.5px;
+      }
+
+      .navigation_credits_box {
+        right: 0;
+      }
+
+      .navigation_share_box, .navigation_credits_box {
+        top: 100px;
+
+        @include pageflow-progress-navigation-bar-small-width {
+          top: $thumbnail-small-width;
+        }
+      }
+
+      li.menu_li {
+        display: none;
+      }
+
+      li.navigation_menu.mute {
+        height: 100%;
+
+        @include pageflow-progress-navigation-bar-small-width {
+          width: $thumbnail-width;
+        }
+
+        .navigation_volume_box {
+          position: absolute;
+          width: 100%;
+
+          .volume-control {
+            text-align: center;
+            display: inline-block;
+            margin: 20px 0 0 0;
+
+            @include pageflow-progress-navigation-bar-small-width {
+              margin: 7px 0 0 0;
+            }
+
+            &:before, &:after {
+              background-image: image-url('pageflow/volume_control_sprite.png');
+              display: inline-block;
+              position: relative;
+              top: 7px;
+              left: 0;
+              width: 19px;
+              height: 19px;
+              content: " ";
+              background-repeat: no-repeat;
+              margin: 0;
+            }
+
+            &:before {
+              background-position: left top;
+            }
+            &:after {
+              background-position: -21px top;
+            }
+
+            .volume-slider {
+              display: inline-block;
+              position: relative;
+              left: -2px;
+              top: 0;
+              width: 78px;
+              height: 4px;
+              background-color: gray;
+            }
+
+            .volume-level {
+              height: 100%;
+              max-width: 62px;
+
+              &:before {
+                display: block;
+                content: "";
+                background-position: -66px top;
+                top: -9px;
+                width: 18px;
+                height: 16px;
+                right: -18px;
+              }
+            }
+          }
+        }
+      }
+
+      li {
+        display: inline-block;
+        height: 100%;
+        width: $thumbnail-width;
+        border: 0;
+
+        @include pageflow-progress-navigation-bar-small-width {
+          width: $thumbnail-small-width;
+        }
+
+        .button {
+          top: 20%;
+          left: 0;
+          padding: 0;
+          margin: 0 auto;
+          position: relative;
+        }
+
+        .navi_hint {
+          top: 70px;
+          left: 0;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          position: absolute;
+          @include pageflow-progress-navigation-bar-small-width {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .scroller {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:after {
+      background-color: transparent;
+    }
+
+    .navigation_dots {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      margin: 6px 0 0 0;
+      text-align: center;
+      white-space: nowrap;
+
+      li {
+        width: 20px;
+        height: 18px;
+        margin-right: 1px;
+        display: inline-block;
+        @include box-sizing(border-box);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .navigation_site_detail {
+    width: 170px;
+    top: 30px;
+    right: 0;
+  }
+}

@@ -9,6 +9,7 @@ $nav-active-chapter-beginning: desaturate($main-color, 40%);
 $nav-hint-color: #A9A9A9 !default;
 $nav-display-header-button: false !default;
 $nav-display-overview-button: true !default;
+$nav-display-sharing-button: true !default;
 
 $nav-chapter-beginning: #afafaf;
 $nav-dot-even: #9B9B9B;
@@ -18,14 +19,59 @@ $nav-bg-color: $basic-background-color;
 $bg-color: $nav-bg-color;
 $nav-bg-color-transparent: $basic-background-color-transparent;
 
-@mixin pageflow-progress-navigation-bar-small-height {
-  @media screen and (max-height: 870px) {
-    @content;
-  }
-}
+@import "../mixins";
 
 .progress_navigation_bar {
+
+  .navigation_site_detail .thumbnail {
+    @extend %pageflow_page_type_thumbnail;
+
+    width: 170px;
+    height: 95px;
+
+    &:after {
+      position: absolute;
+      top: 79px;
+      left: 81px;
+      width: 38px;
+      height: 38px;
+      content: "";
+      background-size: 76px 38px;
+      background-repeat: no-repeat;
+    }
+  }
+
   @if $nav-display-header-button {
+    &.horizontal .scroller .navigation_dots {
+      width: calc(100% - 40px);
+    }
+
+    .header_button {
+      display: block;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 26px;
+      height: 26px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 0;
+
+        .button {
+          color: white;
+          font-size: 22px;
+          background: none;
+          @include fa-bars-icon;
+        }
+
+        .button.close {
+          @include fa-times-icon;
+        }
+      }
+    }
+    
     .navigation_button_area .navigation_bar_buttons li {
       height: 11.11%;
 
@@ -43,8 +89,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
         }
       }
     }
-  }
-  @else {
+  } @else {
     .navigation_button_area .navigation_bar_buttons li {
       height: 12.25%;
 
@@ -74,113 +119,33 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     }
   }
 
+  &.horizontal.js {
+    background: $bg-color;
+
+    .navigation_button_area .navigation_bar_buttons {
+      background: $bg-color;
+
+      @if not $nav-display-overview-button {
+        .navigation_overview_item {
+          display: none;
+        }
+      }
+
+      @if not $nav-display-sharing-button {
+        .navigation_menu.share {
+          display: none;
+        }
+      }
+    }
+  }
+
   .navigation_button_area .navigation_bar_buttons {
     &:after {
-      background-color: $nav-bg-color;
       background-color: $nav-bg-color-transparent;
     }
 
-    .navigation_credits_box a{
+    .navigation_credits_box a {
       color: $main-color;
-    }
-
-    .navigation_bullet, .navigation_menu > a {
-      position: absolute;
-      text-decoration: none;
-
-      .button {
-        text-decoration: none;
-        font-size: 16px;
-        width: 28px;
-        height: 28px;
-        display: block;
-        background: -webkit-linear-gradient(-75deg, rgba(255, 255, 255, 0.71), rgba(0, 0, 0, 0.32));
-        background-color: #03818c !important;
-        box-shadow: 1px 2px 1px 0px rgba(0,0,0,0.2);
-        border-radius: 18px;
-        color: rgba(0, 0, 0, 0.75);
-        cursor: pointer;
-        margin: -25px auto 0 30px;
-        position: relative;
-        background-color: rgb(219, 219, 219) !important;
-        @include shine-gradient;
-
-        @include pageflow-progress-navigation-bar-small-height {
-          margin: -14px auto 0 30px;
-        }
-      }
-
-      &:hover .button, &.active .button {
-          background-color: $nav-color !important;
-          -webkit-mask-image: none;
-          color: rgba(255,255,255,0.9);
-          text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
-
-          .button, .navigation_mute, .navigation_share {
-            color: rgba(255,255,255,0.9);
-            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
-          }
-      }
-
-      .navi_hint {
-        color: $nav-hint-color;
-      }
-
-      &:hover, &.active, &:active {
-        .navi_hint {
-          color: $nav-color;
-        }
-      }
-
-      &:active .button{
-        box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.2);
-        -webkit-transform: translate(1px,1px);
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%,rgba(0,0,0,0.2) 40%,rgba(0,0,0,0.2) 100%);
-      }
-    }
-
-    .button, .navigation_mute, .navigation_share {
-      font-family: "FontAwesome";
-      font-size: 1em;
-      color: rgba(0,0,0,0.75);
-      text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.6);
-
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      line-height: 28px;
-      border-bottom: 0px !important;
-
-    }
-
-    .navigation_bullet.navigation_main {
-      .button {
-        @include fa-reorder-icon;
-      }
-    }
-
-    .navigation_bullet.navigation_top {
-      padding-top: 0;
-      .button {
-        border-bottom: 0;
-        font-weight: bold;
-
-        @include fa-arrow-circle-up-icon;
-      }
-    }
-    .navigation_bullet.navigation_home {
-      padding-top: 0;
-      .button {
-        border-bottom: 0;
-        font-weight: bold;
-
-        @include fa-home-icon;
-      }
-    }
-    .navigation_bullet.navigation_index {
-      .button {
-        @include fa-th-icon;
-      }
     }
 
     &.js .navigation_bar_bottom li.fullscreen {
@@ -191,49 +156,11 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
       background-image: image-url('pageflow/themes/default/scroll_indicator_sprite.png');
     }
 
-    .navigation_bullet.navigation_fullscreen {
-
-      .button {
-        font-weight: bold;
-        @include fa-expand-icon;
-      }
-    }
-    .navigation_bullet.navigation_hide_text {
-      .button {
-        font-weight: bold;
-
-        @include fa-photo-icon;
-      }
-    }
-    .navigation_menu {
-      .navigation_mute {
-        font-weight: bold;
-
-        @include fa-volume-up-icon;
-
-        &.muted {
-          @include fa-volume-off-icon;
+    li {
+      > a {
+        &:hover .navi_hint, &.active .navi_hint {
+          color: $nav-color;
         }
-        &.muted:before {
-          margin-right: 2px;
-        }
-      }
-    }
-    .navigation_menu {
-      .navigation_share {
-        font-weight: bold;
-
-        @include fa-share-icon;
-
-        &:before {
-          margin-left: 1px;
-        }
-      }
-    }
-    .navigation_menu {
-      .navigation_credits {
-        font-weight: bold;
-        @include fa-info-icon;
       }
     }
 
@@ -244,15 +171,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
         p {
           font-family: SourceSansPro;
           font-size: 12px;
-        }
-      }
-
-      .share_google, .share_facebook, .share_twitter {
-        font-size: 1.5em;
-        &:before {
-          font-family: "FontAwesome";
-          color: white;
-          text-shadow: none;
         }
       }
 
@@ -267,21 +185,10 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
           }
         }
       }
-
-      .share_google {
-        @include fa-google-plus-icon;
-      }
-      .share_facebook {
-        @include fa-facebook-icon;
-      }
-      .share_twitter {
-        @include fa-twitter-icon;
-      }
     }
   }
 
   &.js .scroller:after {
-    background-color: $nav-bg-color;
     background-color: $nav-bg-color-transparent;
   }
 
@@ -293,7 +200,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
       height: 100%;
       width: 100%;
       background-color: $nav-dot-even;
-      border-bottom: 1px solid $nav-bg-color;
       border-bottom: 1px solid $nav-bg-color-transparent;
       @include box-sizing(border-box);
 
@@ -305,7 +211,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
         cursor: default;
         background-color: $nav-active-page;
 
-
         img {
           border-left: 5px solid $nav-active-page;
         }
@@ -315,13 +220,13 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     li.chapter_beginning a {
       background-color: $nav-chapter-beginning;
 
-        &.in_active_chapter {
-          background-color: $nav-active-chapter-beginning;
-        }
+      &.in_active_chapter {
+        background-color: $nav-active-chapter-beginning;
+      }
 
-        &.active {
-          background-color: $main-color;
-        }
+      &.active {
+        background-color: $main-color;
+      }
     }
 
     img {

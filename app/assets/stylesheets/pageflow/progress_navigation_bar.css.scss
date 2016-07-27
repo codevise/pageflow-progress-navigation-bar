@@ -16,52 +16,10 @@ $nav-active-chapter: #6D772E;
 $progressbar-mobile-width: 14px;
 
 @import "cross_dependant_styles";
+@import "./progress_navigation_bar/mixins";
 @import "./progress_navigation_bar/animations";
-
-@mixin pageflow-progress-navigation-bar-small-height {
-  @media screen and (max-height: 870px) {
-    @content;
-  }
-}
-
-@mixin pageflow-progress-mobile-variant {
-  .has_mobile_platform & {
-    @content;
-  }
-
-  @include phone {
-    @content;
-  }
-}
-
-@mixin pageflow-progress-navigation-bar-transparent-background {
-  &:after {
-    height: 100%;
-    background-image: none;
-    width: 100%;
-    top: 0;
-    position: absolute;
-    z-index: -1;
-    content: "";
-  }
-}
-
-@mixin pageflow-progress-navigation-bar-box($margin-top, $right) {
-  visibility: hidden;
-  margin-top: $margin-top;
-  background-color: $bg-color;
-  border: 2px solid $nav-color;
-  position: absolute;
-  right: $right;
-  padding: 15px;
-  height: auto;
-  left: initial;
-
-  hr {
-    border:0;
-    border-bottom: 1px solid $nav-color;
-  }
-}
+@import "./progress_navigation_bar/horizontal";
+@import "./progress_navigation_bar/vertical";
 
 .progress_navigation_bar {
   @include unselectable;
@@ -82,22 +40,19 @@ $progressbar-mobile-width: 14px;
   .navi_hint {
     text-align: center;
     color: $nav-hint-color;
-    font-family: "SourceSansPro";
+    font-family: SourceSansPro;
     font-size: 11px;
     top: 50%;
     position: absolute;
     width: 86%;
     margin-top: 16px;
-    padding: 0px 7%;
-    @include pageflow-progress-navigation-bar-small-height {
-      display: none !important;
-    }
+    padding: 0 7%;
   }
 
   @include pageflow-progress-mobile-variant {
+    opacity: 0;
     width: $progressbar-mobile-width;
     @include transition(opacity 0.4s ease 0.5s);
-    opacity: 0;
     @include transform(translateZ(0));
     -webkit-backface-visibility: hidden;
   }
@@ -120,7 +75,6 @@ $progressbar-mobile-width: 14px;
     background-image: image-url('pageflow/progress_navigation_bar/indicator.png');
     position: absolute;
     right: 60px;
-    top: 4.05%;
     @include transition(opacity 0.3s linear);
     opacity: 1;
     top: 35px;
@@ -134,6 +88,11 @@ $progressbar-mobile-width: 14px;
       display: none;
     }
   }
+
+  .header_button {
+    display: none;
+  }
+
   .navigation_button_area {
     width: 0;
     right: 30px;
@@ -147,10 +106,9 @@ $progressbar-mobile-width: 14px;
       overflow: visible;
     }
 
-
     .navigation_bar_buttons {
       @include transition(opacity 0.15s ease, right 0.3s ease);
-      left:0;
+      left: 0;
       opacity: 0;
       width: 87px;
       position: absolute;
@@ -162,7 +120,7 @@ $progressbar-mobile-width: 14px;
         border-bottom: 1px solid $nav-button-hr;
 
         &:last-child {
-          border-bottom: 0px solid $nav-button-hr;
+          border-bottom: 0 solid $nav-button-hr;
         }
         position: relative;
         @include box-sizing(border-box);
@@ -172,7 +130,7 @@ $progressbar-mobile-width: 14px;
         }
 
         > a {
-          height:100%;
+          height: 100%;
           width: 100%;
 
           span.button {
@@ -185,10 +143,6 @@ $progressbar-mobile-width: 14px;
               margin: -20px auto 0 23px;
             }
           }
-
-          &:hover .navi_hint, &.active .navi_hint {
-            color: $nav-hint-hover-color;
-          }
         }
       }
     }
@@ -200,7 +154,7 @@ $progressbar-mobile-width: 14px;
       height: 10%;
 
       &.mute {
-        height :20%;
+        height: 20%;
       }
     }
   }
@@ -214,7 +168,7 @@ $progressbar-mobile-width: 14px;
     width: 122px;
 
     @include pageflow-progress-mobile-variant {
-      width: 14px;
+      width: $progressbar-mobile-width;
     }
 
     .navigation_button_area {
@@ -239,8 +193,8 @@ $progressbar-mobile-width: 14px;
     &:before {
       opacity: 0;
       main & {
-          @include transition(opacity 0.7s linear);
-        }
+        @include transition(opacity 0.7s linear);
+      }
     }
   }
 
@@ -324,7 +278,7 @@ $progressbar-mobile-width: 14px;
     color: white;
     font-size: 1em;
     line-height: 1.1em;
-    font-family: sourcesanspro;
+    font-family: SourceSansPro;
 
     @include pageflow-progress-navigation-bar-box(-40px, 30px);
 
@@ -390,11 +344,11 @@ $progressbar-mobile-width: 14px;
     font-size: 1em;
     min-width: 230px;
     min-height: 4px;
-    font-family: "sourcesanspro";
+    font-family: SourceSansPro;
     bottom: 0;
 
     a {
-      color: #b4c552;
+      color: $nav-hint-hover-color;
     }
 
     a.legal, a.copy {
@@ -491,11 +445,6 @@ $progressbar-mobile-width: 14px;
 
       ul {
         position: absolute;
-        right: 8px;
-        width: 14px;
-        top: 50%;
-        max-height: 100%;
-        @include transform(translate(0, -50%) !important);
 
         @include pageflow-progress-mobile-variant {
           right: 3px;
@@ -574,40 +523,18 @@ $progressbar-mobile-width: 14px;
             cursor: default;
             background-color: $nav-active-page;
 
-
             img {
               border-left: 5px solid #A6D513;
             }
           }
-
-          /* &:visited {
-            background-color: #9EA95C;
-          } */
         }
 
-/*        li.chapter_odd a {
-          background-color: $nav-dot-odd;
+        li.chapter_beginning a {
+          background-color: $nav-color;
 
           &.in_active_chapter {
-            background-color: $nav-active-chapter;
+            background-color: $nav-active-chapter-beginning;
           }
-
-          &.active {
-            background-color: $nav-active-page;
-          }
-        } */
-
-        li.chapter_beginning a {
-          background-color: #949494;
-
-            &.in_active_chapter {
-              background-color: $nav-active-chapter-beginning;
-            }
-
-        /*  &:visited {
-            background-color: #9EA95C;
-            opacity: 0;
-          } */
         }
 
         img {
@@ -674,7 +601,7 @@ $progressbar-mobile-width: 14px;
     }
 
     .volume-control {
-      margin: 0px 20px;
+      margin: 0 20px;
 
       .volume-slider {
         width: 5px;
@@ -691,19 +618,9 @@ $progressbar-mobile-width: 14px;
       }
       .volume-level {
         height: 100%;
-        background-color: #b4c552;
+        background-color: $nav-hint-hover-color;
         bottom: 0;
         position: absolute;
-
-        &:before {
-          display: block;
-          content: "";
-          background-position: -66px top;
-          top: -9px !important;
-          width: 18px !important;
-          height: 16px !important;
-          left: -6px !important;
-        }
       }
     }
   }
