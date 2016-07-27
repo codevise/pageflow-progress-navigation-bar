@@ -420,6 +420,10 @@ $progressbar-mobile-width: 14px;
       }
     }
 
+    .navigation_top.deactivated {
+      pointer-events: none;
+    }
+
     .scroller {
       top: 0;
       bottom: 0;
