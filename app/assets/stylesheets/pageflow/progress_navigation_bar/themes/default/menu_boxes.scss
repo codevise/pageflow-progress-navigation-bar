@@ -20,6 +20,9 @@ $progress-navigation-bar-menu-box-border-width: $navigation-menu-box-border-widt
 /// Color of border if `$navigation-menu-box-style` is `"border"`.
 $progress-navigation-bar-menu-box-border-color: $navigation-menu-box-border-color !default;
 
+/// Text color of chapter title. Use `$navigation-menu-box-text-color` if not defined.
+$progress-navigation-bar-menu-box-chapter-title-color: $navigation-menu-box-text-color !default;
+
 .navigation_site_detail,
 .navigation_menu_box {
   color: $progress-navigation-bar-menu-box-text-color;
@@ -28,5 +31,9 @@ $progress-navigation-bar-menu-box-border-color: $navigation-menu-box-border-colo
 
   hr {
     border-bottom: 1px solid $progress-navigation-bar-menu-box-text-color;
+  }
+
+  .chapter_title {
+    color: $progress-navigation-bar-menu-box-chapter-title-color;
   }
 }
