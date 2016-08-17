@@ -50,7 +50,9 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
   }
 
   .navigation_site_detail .thumbnail {
-    @extend %pageflow_page_type_thumbnail;
+    @if $progress-navigation-bar-pictogram-visibility == visible {
+      @extend %pageflow_page_type_thumbnail;
+    }
 
     position: relative;
     width: 170px;

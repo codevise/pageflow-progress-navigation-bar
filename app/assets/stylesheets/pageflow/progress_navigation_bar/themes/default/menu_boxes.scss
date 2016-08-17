@@ -23,6 +23,9 @@ $progress-navigation-bar-menu-box-border-color: $navigation-menu-box-border-colo
 /// Text color of chapter title. Use `$navigation-menu-box-text-color` if not defined.
 $progress-navigation-bar-menu-box-chapter-title-color: $navigation-menu-box-text-color !default;
 
+/// Pictogram visibility.
+$progress-navigation-bar-pictogram-visibility: $standard-page-pictogram-visibility !default;
+
 .navigation_site_detail,
 .navigation_menu_box {
   color: $progress-navigation-bar-menu-box-text-color;
