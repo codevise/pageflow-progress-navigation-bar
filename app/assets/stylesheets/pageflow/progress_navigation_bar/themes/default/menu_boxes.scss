@@ -1,0 +1,39 @@
+////
+/// @group menu-boxes
+////
+
+// Define locally if not defined by theme
+$navigation-menu-box-background-color: #353535 !default;
+$navigation-menu-box-text-color: #fff !default;
+$navigation-menu-box-border-width: 2px !default;
+$navigation-menu-box-border-color: #9c9c9c !default;
+
+/// Background color of page detail and menu boxes
+$progress-navigation-bar-menu-box-background-color: $navigation-menu-box-background-color !default;
+
+/// Text color of page detail and menu boxes
+$progress-navigation-bar-menu-box-text-color: $navigation-menu-box-text-color !default;
+
+/// Width of border if `$navigation-menu-box-style` is `"border"`.
+$progress-navigation-bar-menu-box-border-width: $navigation-menu-box-border-width !default;
+
+/// Color of border if `$navigation-menu-box-style` is `"border"`.
+$progress-navigation-bar-menu-box-border-color: $navigation-menu-box-border-color !default;
+
+/// Text color of chapter title. Use `$navigation-menu-box-text-color` if not defined.
+$progress-navigation-bar-menu-box-chapter-title-color: $navigation-menu-box-text-color !default;
+
+.navigation_site_detail,
+.navigation_menu_box {
+  color: $progress-navigation-bar-menu-box-text-color;
+  background-color: $progress-navigation-bar-menu-box-background-color;
+  border: $progress-navigation-bar-menu-box-border-width solid $progress-navigation-bar-menu-box-border-color;
+
+  hr {
+    border-bottom: 1px solid $progress-navigation-bar-menu-box-text-color;
+  }
+
+  .chapter_title {
+    color: $progress-navigation-bar-menu-box-chapter-title-color;
+  }
+}

@@ -1,0 +1,22 @@
+////
+/// @group buttons
+////
+
+/// Color of label below the buttons.
+$progress-navigation-bar-button-label-color: #a9a9a9 !default;
+
+/// Color of label below active button.
+$progress-navigation-bar-active-button-label-color: $main-color !default;
+
+.navigation_bar_buttons {
+  .navi_hint {
+    color: $progress-navigation-bar-button-label-color;
+  }
+
+  a:hover,
+  .active {
+    .navi_hint {
+      color: $progress-navigation-bar-active-button-label-color;
+    }
+  }
+}

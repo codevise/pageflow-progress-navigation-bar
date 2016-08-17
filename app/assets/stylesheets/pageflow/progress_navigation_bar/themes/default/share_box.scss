@@ -1,0 +1,9 @@
+$navigation-share-link-color: #9c9c9c !default;
+
+$progress-navigation-bar-share-link-color: $navigation-share-link-color !default;
+
+.navigation_share_box {
+  a p {
+    color: $progress-navigation-bar-share-link-color;
+  }
+}
