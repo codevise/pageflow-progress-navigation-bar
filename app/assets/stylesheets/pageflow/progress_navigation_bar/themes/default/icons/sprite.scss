@@ -101,11 +101,11 @@
     }
 
     &:before {
-      @include pageflow-sprite-icon-volume-down;
+      @include pageflow-sprite-icon-volume-up;
     }
 
     &:after {
-      @include pageflow-sprite-icon-volume-up;
+      @include pageflow-sprite-icon-volume-down;
     }
   }
 
@@ -117,11 +117,11 @@
       }
 
       &:before {
-        left: -5px;
+        right: -5px;
       }
 
       &:after {
-        right: -5px;
+        left: -5px;
       }
     }
   }
