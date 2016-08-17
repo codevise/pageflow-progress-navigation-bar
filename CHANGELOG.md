@@ -4,7 +4,20 @@
 
 [Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.4.0...master)
 
-None so far.
+- Add configurable pictogram visibility
+  ([#20](https://github.com/codevise/pageflow-progress-navigation-bar/pull/20))
+- Fix volume up/down icons
+  ([#19](https://github.com/codevise/pageflow-progress-navigation-bar/pull/19))
+- Also apply transparent bg color for horizontal bar
+  ([#18](https://github.com/codevise/pageflow-progress-navigation-bar/pull/18))
+- Prevent hover effect for deactivated top button
+  ([#17](https://github.com/codevise/pageflow-progress-navigation-bar/pull/17))
+- Make link and menu box colors configurable
+  ([#16](https://github.com/codevise/pageflow-progress-navigation-bar/pull/16))
+- Horizontal navigation bar
+  ([#15](https://github.com/codevise/pageflow-progress-navigation-bar/pull/15))
+- Use share links partials from pageflow gem
+  ([#14](https://github.com/codevise/pageflow-progress-navigation-bar/pull/14))
 
 ### Version 0.4.0
 
