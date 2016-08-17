@@ -148,7 +148,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
   }
 
   &.horizontal.js {
-    background: $bg-color;
+    background-color: $nav-bg-color-transparent;
 
     .navigation_button_area .navigation_bar_buttons {
       background: $nav-bg-color-transparent;
