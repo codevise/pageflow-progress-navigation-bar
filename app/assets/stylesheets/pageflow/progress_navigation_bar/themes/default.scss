@@ -12,6 +12,9 @@ $progress-navigation-bar-display-header-button: $navigation-display-header-butto
 /// Display social share menu
 $progress-navigation-bar-display-share-button: $navigation-display-share-button !default;
 
+/// Display hide text menu button
+$progress-navigation-bar-display-hide-text-button: $navigation-display-hide-text-button !default;
+
 // Legacy
 
 $nav-color: $main-color;
@@ -149,6 +152,12 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     }
   }
 
+  @if not $progress-navigation-bar-display-hide-text-button {
+    .hide_text {
+      display: none;
+    }
+  }
+
   &.horizontal.js {
     background-color: $nav-bg-color-transparent;
 
@@ -157,6 +166,12 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
       @if not $progress-navigation-bar-display-share-button {
         .navigation_menu.share {
+          display: none;
+        }
+      }
+
+      @if not $progress-navigation-bar-display-hide-text-button {
+        .hide_text {
           display: none;
         }
       }
