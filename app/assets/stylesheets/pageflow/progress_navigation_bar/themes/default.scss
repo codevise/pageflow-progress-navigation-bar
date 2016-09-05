@@ -15,7 +15,6 @@ $progress-navigation-bar-display-share-button: $navigation-display-share-button 
 // Legacy
 
 $nav-color: $main-color;
-$nav-font: $standard-font;
 
 $nav-active-chapter: desaturate($main-color, 50%);
 $nav-active-page: $main-color;
@@ -42,6 +41,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
   @import "./default/icons/sprite";
   @import "./default/menu_boxes";
   @import "./default/share_box";
+  @import "./default/typography";
 
   @if $progress-navigation-bar-icons == "sprite" {
     @include progress-navigation-bar-icons-sprite;
@@ -179,11 +179,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     .navigation_share_box {
       a {
         text-align: center;
-
-        p {
-          font-family: SourceSansPro;
-          font-size: 12px;
-        }
       }
 
       a.active,

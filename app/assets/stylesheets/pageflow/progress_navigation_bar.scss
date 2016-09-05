@@ -41,8 +41,6 @@ $progressbar-mobile-width: 14px;
   .navi_hint {
     text-align: center;
     color: $nav-hint-color;
-    font-family: SourceSansPro;
-    font-size: 11px;
     top: 50%;
     position: absolute;
     width: 86%;
@@ -270,12 +268,7 @@ $progressbar-mobile-width: 14px;
   }
 
   .navigation_site_detail {
-
     color: white;
-    font-size: 1em;
-    line-height: 1.1em;
-    font-family: SourceSansPro;
-
     @include pageflow-progress-navigation-bar-box(-40px, 30px);
   }
 
@@ -318,7 +311,6 @@ $progressbar-mobile-width: 14px;
       width: 39px;
 
       p {
-        font-size: 9px;
         color: $nav-color;
         margin-bottom: 0;
         text-align: center;
@@ -333,10 +325,8 @@ $progressbar-mobile-width: 14px;
   }
 
   .navigation_credits_box {
-    font-size: 1em;
     min-width: 230px;
     min-height: 4px;
-    font-family: SourceSansPro;
 
     a {
       color: $nav-hint-hover-color;
@@ -571,14 +561,7 @@ $progressbar-mobile-width: 14px;
 }
 
 .navigation_site_detail.progress_navigation h2 {
-  font-size: 1em;
-  line-height: 1.2em;
-  margin: 0;
-
   > span {
     display: block;
-  }
-  .chapter_number {
-    font-weight: normal;
   }
 }
