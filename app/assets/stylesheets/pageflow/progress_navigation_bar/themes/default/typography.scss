@@ -1,0 +1,90 @@
+/// Base typography for widget.
+$progress-navigation-bar-typography: () !default;
+
+/// Typography of labels below the buttons.
+$progress-navigation-bar-button-label-typography: () !default;
+
+/// Typography of the text inside the page preview boxes.
+$progress-navigation-bar-page-box-typography: () !default;
+
+/// Typography of the chapter header above the page title.
+$progress-navigation-bar-chapter-header-typography: () !default;
+
+/// Typography of the chapter number inside the page preview box.
+$progress-navigation-bar-chapter-number-typography: () !default;
+
+/// Typography of the chapter title inside the page preview box.
+$progress-navigation-bar-chapter-title-typography: () !default;
+
+/// Typography for share link labels.
+$progress-navigation-bar-share-link-typography: () !default;
+
+/// Typography for credits box.
+$progress-navigation-bar-credits-box-typography: () !default;
+
+@include standard-typography($progress-navigation-bar-typography, ());
+
+.navi_hint {
+  @include typography(
+    $progress-navigation-bar-button-label-typography,
+    (
+      font-size: 11px
+    )
+  );
+}
+
+.navigation_site_detail {
+  @include typography(
+    $progress-navigation-bar-page-box-typography,
+    (
+      font-size: 1em,
+      line-height: 1.1em
+    )
+  );
+
+  h2 {
+    @include typography(
+      $progress-navigation-bar-chapter-header-typography,
+      (
+        font-size: 1em,
+        line-height: 1.2em,
+        margin: 0
+      )
+    );
+  }
+
+  .chapter_number {
+    @include typography(
+      $progress-navigation-bar-chapter-number-typography,
+      (
+        font-weight: normal
+      )
+    );
+  }
+
+  .chapter_title {
+    @include typography(
+      $progress-navigation-bar-chapter-title-typography
+    );
+  }
+}
+
+.navigation_share_box {
+  p {
+    @include typography(
+      $progress-navigation-bar-share-link-typography,
+      (
+        font-size: 12px
+      )
+    );
+  }
+}
+
+.navigation_credits_box {
+  @include typography(
+    $progress-navigation-bar-credits-box-typography,
+    (
+      font-size: 1em
+    )
+  );
+}
