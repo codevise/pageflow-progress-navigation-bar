@@ -1,8 +1,10 @@
 # CHANGELOG
 
-### Changes on `master`
+### Version 0.5.0
 
-[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.4.0...master)
+2016-09-09
+
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/v0.4.0...v0.5.0)
 
 - Add configurable pictogram visibility
   ([#20](https://github.com/codevise/pageflow-progress-navigation-bar/pull/20))
@@ -18,6 +20,14 @@
   ([#15](https://github.com/codevise/pageflow-progress-navigation-bar/pull/15))
 - Use share links partials from pageflow gem
   ([#14](https://github.com/codevise/pageflow-progress-navigation-bar/pull/14))
+- Add theme options to control display of hide text button
+  ([#24](https://github.com/codevise/pageflow-progress-navigation-bar/pull/24))
+- Make typography configurable in theme
+  ([#23](https://github.com/codevise/pageflow-progress-navigation-bar/pull/23))
+- Rename .css.scss files to only .scss
+  ([#22](https://github.com/codevise/pageflow-progress-navigation-bar/pull/22))
+- Fix icon font volume icons
+  ([#21](https://github.com/codevise/pageflow-progress-navigation-bar/pull/21))
 
 ### Version 0.4.0
 
