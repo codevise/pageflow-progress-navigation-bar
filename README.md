@@ -10,10 +10,11 @@ Add this line to your application's `Gemfile`:
 
     gem 'pageflow-progress-navigation-bar'
 
-Register the widget type inside the configure block in `config/initializers/pageflow.rb`
+Register the widget types inside the configure block in `config/initializers/pageflow.rb`
 
     Pageflow.configure do |config|
-      config.widget_types.register(Pageflow::ProgressNavigationBar.widget_type)
+      config.widget_types.register(Pageflow::ProgressNavigationBar.vertical_widget_type)
+      config.widget_types.register(Pageflow::ProgressNavigationBar.horizontal_widget_type)
     end
 
 Include javascripts and stylesheets:
