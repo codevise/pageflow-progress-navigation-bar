@@ -305,7 +305,7 @@ $progressbar-mobile-width: 14px;
     width: 210px;
 
     a {
-      float: left;
+      @include float-start;
       text-decoration: none;
       padding: 0 15px 0 15px;
       width: 39px;
@@ -333,7 +333,7 @@ $progressbar-mobile-width: 14px;
     }
 
     a.legal, a.copy {
-      float: left;
+      @include float-start;
     }
   }
 
