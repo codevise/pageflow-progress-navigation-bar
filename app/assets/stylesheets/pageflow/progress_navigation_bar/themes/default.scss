@@ -15,20 +15,27 @@ $progress-navigation-bar-display-share-button: $navigation-display-share-button 
 /// Display hide text menu button
 $progress-navigation-bar-display-hide-text-button: $navigation-display-hide-text-button !default;
 
+/// Chapter Indicator colors
+$progress-navigation-bar-inactive-cahpter-color-even: #9B9B9B !default;
+$progress-navigation-bar-inactive-cahpter-color-odd: #afafaf !default;
+$nav-chapter-beginning-color: #afafaf !default;
+$nav-active-chapter-color: desaturate($main-color, 50%) !default;
+$nav-active-chapter-beginning-color: desaturate($main-color, 40%) !default;
+
 // Legacy
 
 $nav-color: $main-color;
 
-$nav-active-chapter: desaturate($main-color, 50%);
+$nav-active-chapter: $nav-active-chapter-color;
 $nav-active-page: $main-color;
 
-$nav-active-chapter-beginning: desaturate($main-color, 40%);
+$nav-active-chapter-beginning: $nav-active-chapter-beginning-color;
 
 $nav-hint-color: #A9A9A9 !default;
 
-$nav-chapter-beginning: #afafaf;
-$nav-dot-even: #9B9B9B;
-$nav-dot-odd: #afafaf;
+$nav-chapter-beginning: $nav-chapter-beginning-color;
+$nav-dot-even: $progress-navigation-bar-inactive-cahpter-color-even;
+$nav-dot-odd: $progress-navigation-bar-inactive-cahpter-color-odd;
 
 $nav-bg-color: $basic-background-color;
 $bg-color: $nav-bg-color;
