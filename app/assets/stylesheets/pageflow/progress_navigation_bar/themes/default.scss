@@ -15,20 +15,24 @@ $progress-navigation-bar-display-share-button: $navigation-display-share-button 
 /// Display hide text menu button
 $progress-navigation-bar-display-hide-text-button: $navigation-display-hide-text-button !default;
 
+/// Chapter Indicator colors
+
+$progress-navigation-bar-active-page-color: $main-color !default;
+
+$progress-navigation-bar-inactive-chapter-color: #9B9B9B !default;
+
+$progress-navigation-bar-chapter-beginning-color: #afafaf !default;
+
+$progress-navigation-bar-active-chapter-color: desaturate($progress-navigation-bar-active-page-color, 50%) !default;
+
+$progress-navigation-bar-active-chapter-beginning-color: desaturate($progress-navigation-bar-active-page-color, 40%) !default;
+
+
 // Legacy
 
 $nav-color: $main-color;
 
-$nav-active-chapter: desaturate($main-color, 50%);
-$nav-active-page: $main-color;
-
-$nav-active-chapter-beginning: desaturate($main-color, 40%);
-
 $nav-hint-color: #A9A9A9 !default;
-
-$nav-chapter-beginning: #afafaf;
-$nav-dot-even: #9B9B9B;
-$nav-dot-odd: #afafaf;
 
 $nav-bg-color: $basic-background-color;
 $bg-color: $nav-bg-color;
@@ -222,33 +226,33 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: $nav-dot-even;
+      background-color: $progress-navigation-bar-inactive-chapter-color;
       border-bottom: 1px solid $nav-bg-color-transparent;
       @include box-sizing(border-box);
 
       &.in_active_chapter {
-        background-color: $nav-active-chapter;
+        background-color: $progress-navigation-bar-active-chapter-color;
       }
 
       &.active {
         cursor: default;
-        background-color: $nav-active-page;
+        background-color: $progress-navigation-bar-active-page-color;
 
         img {
-          border-left: 5px solid $nav-active-page;
+          border-left: 5px solid $progress-navigation-bar-active-page-color;
         }
       }
     }
 
     li.chapter_beginning a {
-      background-color: $nav-chapter-beginning;
+      background-color: $progress-navigation-bar-chapter-beginning-color;
 
       &.in_active_chapter {
-        background-color: $nav-active-chapter-beginning;
+        background-color: $progress-navigation-bar-active-chapter-beginning-color;
       }
 
       &.active {
-        background-color: $main-color;
+        background-color: $progress-navigation-bar-active-page-color;
       }
     }
 
@@ -258,10 +262,10 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
     &.no_chapters {
       li.chapter_beginning a, li a.in_active_chapter, li.chapter_beginning a.in_active_chapter {
-        background-color: $nav-dot-even;
+        background-color: $progress-navigation-bar-inactive-chapter-color;
 
         &.active {
-          background-color: $nav-active-page;
+          background-color: $progress-navigation-bar-active-page-color;
         }
       }
     }
