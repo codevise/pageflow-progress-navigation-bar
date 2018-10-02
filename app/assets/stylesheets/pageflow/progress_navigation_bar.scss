@@ -159,11 +159,6 @@ $progressbar-mobile-width: 14px;
 
   &.hover, &:hover, &:focus, &.focus {
     overflow: visible;
-    width: 122px;
-
-    @include pageflow-progress-mobile-variant {
-      width: $progressbar-mobile-width;
-    }
 
     .navigation_button_area {
       width: 87px;
@@ -418,23 +413,13 @@ $progressbar-mobile-width: 14px;
       top: 0;
       bottom: 0;
       right: 0;
-      width: 30px;
       max-height: 100%;
       overflow: hidden;
       position: absolute;
       @include pageflow-progress-navigation-bar-transparent-background;
 
-      @include pageflow-progress-mobile-variant {
-        width: $progressbar-mobile-width;
-      }
-
       ul {
         position: absolute;
-
-        @include pageflow-progress-mobile-variant {
-          right: 3px;
-          width: 8px;
-        }
 
         li {
           position: relative;
