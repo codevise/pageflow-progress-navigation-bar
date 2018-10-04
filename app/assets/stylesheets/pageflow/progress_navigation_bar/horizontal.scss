@@ -9,6 +9,7 @@ $thumbnail-small-width: 50px;
 
   @include pageflow-progress-mobile-variant {
     height: $progressbar-mobile-width;
+    overflow: hidden;
 
     .header_button {
       display: none;

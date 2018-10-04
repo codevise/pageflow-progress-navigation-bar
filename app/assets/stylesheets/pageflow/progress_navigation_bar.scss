@@ -50,6 +50,7 @@ $progressbar-mobile-width: 14px;
 
   @include pageflow-progress-mobile-variant {
     opacity: 0;
+    pointer-events: none;
     width: $progressbar-mobile-width;
     @include transition(opacity 0.4s ease 0.5s);
     @include transform(translateZ(0));
