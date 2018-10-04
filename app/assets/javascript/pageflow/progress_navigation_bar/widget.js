@@ -51,8 +51,8 @@
 
       this.element.addClass('js').append(overlays);
 
-      this.element.toggleClass('horizontal', this.element.data('widget') === 'progress_navigation_bar_horizontal');
-      this.element.toggleClass('vertical', this.element.data('widget') !== 'progress_navigation_bar_horizontal');
+      this.element.toggleClass('horizontal', useHorizontalVariant(this.element));
+      this.element.toggleClass('vertical', !useHorizontalVariant(this.element));
 
       $('a.navigation_top', this.element).topButton();
 
@@ -289,4 +289,10 @@
       });
     }
   });
+
+  function useHorizontalVariant(element) {
+    return element.data('widget') === 'progress_navigation_bar_horizontal' ||
+           (pageflow.browser.has('phone platform') &&
+            pageflow.features.isEnabled('horizontal_slideshow_navigation_on_phone'));
+  }
 }(jQuery));

@@ -50,10 +50,16 @@ $progressbar-mobile-width: 14px;
 
   @include pageflow-progress-mobile-variant {
     opacity: 0;
+    pointer-events: none;
     width: $progressbar-mobile-width;
     @include transition(opacity 0.4s ease 0.5s);
     @include transform(translateZ(0));
     -webkit-backface-visibility: hidden;
+  }
+
+  &.show_on_mobile {
+    opacity: 1;
+    @include transition(opacity 0.4s ease);
   }
 
   position: absolute;
@@ -159,11 +165,6 @@ $progressbar-mobile-width: 14px;
 
   &.hover, &:hover, &:focus, &.focus {
     overflow: visible;
-    width: 122px;
-
-    @include pageflow-progress-mobile-variant {
-      width: $progressbar-mobile-width;
-    }
 
     .navigation_button_area {
       width: 87px;
@@ -418,23 +419,13 @@ $progressbar-mobile-width: 14px;
       top: 0;
       bottom: 0;
       right: 0;
-      width: 30px;
       max-height: 100%;
       overflow: hidden;
       position: absolute;
       @include pageflow-progress-navigation-bar-transparent-background;
 
-      @include pageflow-progress-mobile-variant {
-        width: $progressbar-mobile-width;
-      }
-
       ul {
         position: absolute;
-
-        @include pageflow-progress-mobile-variant {
-          right: 3px;
-          width: 8px;
-        }
 
         li {
           position: relative;
