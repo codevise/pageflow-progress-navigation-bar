@@ -292,7 +292,7 @@
 
   function useHorizontalVariant(element) {
     return element.data('widget') === 'progress_navigation_bar_horizontal' ||
-           (pageflow.browser.has('phone platform') &&
-            pageflow.features.isEnabled('horizontal_slideshow_navigation_on_phone'));
+           (pageflow.navigationDirection &&
+            pageflow.navigationDirection.isHorizontal());
   }
 }(jQuery));
