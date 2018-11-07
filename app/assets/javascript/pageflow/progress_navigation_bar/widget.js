@@ -51,7 +51,7 @@
 
       this.element.addClass('js').append(overlays);
 
-      this.element.toggleClass('horizontal', useHorizontalVariant(this.element));
+      this.element.toggleClass('horizontal', !!useHorizontalVariant(this.element));
       this.element.toggleClass('vertical', !useHorizontalVariant(this.element));
 
       $('a.navigation_top', this.element).topButton();
