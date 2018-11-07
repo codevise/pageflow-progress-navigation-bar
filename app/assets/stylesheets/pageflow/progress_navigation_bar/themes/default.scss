@@ -27,6 +27,8 @@ $progress-navigation-bar-active-chapter-color: desaturate($progress-navigation-b
 
 $progress-navigation-bar-active-chapter-beginning-color: desaturate($progress-navigation-bar-active-page-color, 40%) !default;
 
+/// @see $default-widget-icon-font-options
+$progress-navigation-bar-icon-font-options: () !default;
 
 // Legacy
 
@@ -53,7 +55,9 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
   @if $progress-navigation-bar-icons == "sprite" {
     @include progress-navigation-bar-icons-sprite;
   } @else {
-    @include progress-navigation-bar-icons-icon-font;
+    @include progress-navigation-bar-icons-icon-font(
+      widget-icon-font-options($progress-navigation-bar-icon-font-options)...
+    );
   }
 
   .navigation_site_detail .thumbnail {
@@ -198,19 +202,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     .navigation_share_box {
       a {
         text-align: center;
-      }
-
-      a.active,
-      a:hover {
-        p {
-          color: $nav-color;
-        }
-
-        .share_google, .share_facebook, .share_twitter {
-          &:before {
-            color: $nav-color;
-          }
-        }
       }
     }
   }
