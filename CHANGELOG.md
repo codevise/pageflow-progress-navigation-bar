@@ -1,8 +1,10 @@
 # CHANGELOG
 
-### Unreleased Changes
+### Version 1.1.0
 
-[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/1-0-stable...master)
+2018-12-10
+
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/1-0-stable...v1.1.0)
 
 - Add support for Pageflow 13
   ([#31](https://github.com/codevise/pageflow-progress-navigation-bar/pull/31))
