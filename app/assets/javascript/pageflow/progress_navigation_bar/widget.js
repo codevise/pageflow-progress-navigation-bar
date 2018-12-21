@@ -160,6 +160,8 @@
       pageLinks.each(function(index) {
         var handlerIn = function() {
           if (!('ontouchstart' in document.documentElement)) {
+            overlays.loadLazyImages();
+
             if (that.element.hasClass('horizontal')) {
               var offset = 204;
               var left = $(this).offset().left;
