@@ -1,5 +1,6 @@
 <%= content_tag(:li, :class => page_navigation_css_class(page)) do %>
   <%= link_to "##{page.perma_id}", :data => {:link => page.id, :chapter_id => page.chapter_id} do %>
+    <%= page.title %>
   <% end %>
   <div class="navigation_site_detail progress_navigation">
     <% if chapters_count > 1 %>
