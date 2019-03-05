@@ -256,6 +256,7 @@ $progressbar-mobile-width: 14px;
   .navigation_dots a {
     position: relative;
     outline: none;
+    @include hide-text;
 
     &:focus:after {
       content: " ";
