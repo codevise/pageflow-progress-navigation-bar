@@ -4,10 +4,7 @@
 
   $button-icon-color,
   $active-button-icon-color,
-  $deactivated-button-icon-color,
-
-  $share-icon-color: $widget-text-color,
-  $active-share-icon-color: $main-color
+  $deactivated-button-icon-color
 ) {
   .navigation_button_area .navigation_bar_buttons {
 
@@ -133,44 +130,6 @@
         font-weight: bold;
 
         @include fa-info-icon;
-      }
-    }
-
-    .share_google,
-    .share_facebook,
-    .share_twitter {
-      font-size: 1.5em;
-      &:before {
-        font-family: "FontAwesome";
-        color: $share-icon-color;
-        text-shadow: none;
-      }
-    }
-
-    .share_google {
-      @include fa-google-plus-icon;
-    }
-    .share_facebook {
-      @include fa-facebook-icon;
-    }
-    .share_twitter {
-      @include fa-twitter-icon;
-    }
-
-    .navigation_share_box {
-      a.active,
-      a:hover {
-        p {
-          color: $active-share-icon-color;
-        }
-
-        .share_google,
-        .share_facebook,
-        .share_twitter {
-          &:before {
-            color: $active-share-icon-color;
-          }
-        }
       }
     }
   }

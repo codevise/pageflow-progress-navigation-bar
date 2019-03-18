@@ -1,9 +1,37 @@
-$navigation-share-link-color: #9c9c9c !default;
-
-$progress-navigation-bar-share-link-color: $navigation-share-link-color !default;
-
 .navigation_share_box {
-  a p {
-    color: $progress-navigation-bar-share-link-color;
+  padding: 15px;
+  text-align: center;
+
+  .share_box_icons {
+    display: flex;
+    text-align: center;
+
+    a {
+      float: left;
+      position: relative;
+      width: 60px;
+      height: 45px;
+      text-align: center;
+      text-decoration: none;
+      margin: 0 auto;
+
+      svg {
+        width: 60px;
+        height: 25px;
+        margin-bottom: 7px;
+      }
+
+      p {
+        font-family: SourceSansPro;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1;
+        margin: 0;
+      }
+    }
+  }
+
+  .sub_share {
+    margin-top: 20px;
   }
 }

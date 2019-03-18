@@ -302,30 +302,6 @@ $progressbar-mobile-width: 14px;
     }
   }
 
-  .navigation_share_box {
-    $size: 28px;
-    width: 210px;
-
-    a {
-      @include float-start;
-      text-decoration: none;
-      padding: 0 15px 0 15px;
-      width: 39px;
-
-      p {
-        color: $nav-color;
-        margin-bottom: 0;
-        text-align: center;
-      }
-
-      .button {
-        width: $size;
-        height: $size;
-        margin: auto;
-      }
-    }
-  }
-
   .navigation_credits_box {
     min-width: 230px;
     min-height: 4px;

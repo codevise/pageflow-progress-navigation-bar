@@ -47,6 +47,7 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
   @import "./default/buttons";
   @import "./default/credits";
   @import "./default/icons/icon_font";
+  @import "./default/icons/share_icons";
   @import "./default/icons/sprite";
   @import "./default/menu_boxes";
   @import "./default/share_box";
@@ -197,12 +198,6 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
 
     &.js a.scroll_indicator {
       background-image: image-url('pageflow/themes/default/scroll_indicator_sprite.png');
-    }
-
-    .navigation_share_box {
-      a {
-        text-align: center;
-      }
     }
   }
 
