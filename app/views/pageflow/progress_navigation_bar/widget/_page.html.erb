@@ -4,10 +4,10 @@
   <% end %>
   <div class="navigation_site_detail progress_navigation">
     <% if chapters_count > 1 %>
-    <h2>
+    <div class="chapter">
       <span class="chapter_number"><%= "#{I18n.t('pageflow.public.chapter')} #{page.chapter.position + 1}" %></span>
       <span class="chapter_title"><%= page.chapter.title %></span>
-    </h2>
+    </div>
     <hr />
     <% end %>
     <%= page.title %>

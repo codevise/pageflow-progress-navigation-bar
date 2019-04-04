@@ -42,11 +42,12 @@ $progress-navigation-bar-credits-box-typography: () !default;
     )
   );
 
-  h2 {
+  .chapter {
     @include typography(
       $progress-navigation-bar-chapter-header-typography,
       (
         font-size: 1em,
+        font-weight: bold,
         line-height: 1.2em,
         margin: 0
       )
