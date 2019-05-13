@@ -478,12 +478,19 @@ $progressbar-mobile-width: 14px;
         }
       }
     }
-    .no_chapters li.chapter_beginning a, .no_chapters li a.in_active_chapter, .scroller ul.no_chapters li.chapter_beginning a.in_active_chapter {
+
+    &.no_chapters ul.navigation_dots li.chapter_beginning a,
+    &.no_chapters ul.navigation_dots li a.in_active_chapter,
+    .scroller ul.navigation_dots li.chapter_beginning a.in_active_chapter {
       background-color: $nav-dot-even;
 
       &.active {
         background-color: $nav-active-page;
       }
+    }
+
+    &.no_chapters .navigation_site_detail .chapter {
+      display: none;
     }
 
     .navigation_menu_box {
