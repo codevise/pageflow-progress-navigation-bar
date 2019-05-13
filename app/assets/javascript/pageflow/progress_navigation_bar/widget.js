@@ -123,11 +123,11 @@
       });
 
       var shareBox = $('.navigation_share_box', this.element),
-          links = $('> a', shareBox);
+          links = $('.share_box_icons > a', shareBox);
       shareBox.shareMenu({
         subMenu: $('.sub_share', shareBox),
         links: links,
-        insertAfter: links.last(),
+        insertAfter: $('.share_box_icons'),
         closeOnMouseLeaving: shareBox
       });
 
