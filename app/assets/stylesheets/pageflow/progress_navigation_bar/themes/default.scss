@@ -250,8 +250,11 @@ $nav-bg-color-transparent: $basic-background-color-transparent;
     img {
       display: block;
     }
+  }
 
-    &.no_chapters {
+  &.no_chapters,
+  &.no_chapters.js {
+    .scroller ul.navigation_dots {
       li.chapter_beginning a, li a.in_active_chapter, li.chapter_beginning a.in_active_chapter {
         background-color: $progress-navigation-bar-inactive-chapter-color;
 

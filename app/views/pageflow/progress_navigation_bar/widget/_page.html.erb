@@ -7,8 +7,8 @@
     <div class="chapter">
       <span class="chapter_number"><%= "#{I18n.t('pageflow.public.chapter')} #{page.chapter.position + 1}" %></span>
       <span class="chapter_title"><%= page.chapter.title %></span>
+      <hr />
     </div>
-    <hr />
     <% end %>
     <%= page.title %>
     <div class="thumbnail is_<%= page.template %>">
