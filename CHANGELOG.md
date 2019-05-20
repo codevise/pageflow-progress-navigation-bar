@@ -1,8 +1,10 @@
 # CHANGELOG
 
-### Unreleased Changes
+### Version 1.4.0
 
-[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/1-3-stable...master)
+2019-05-20
+
+[Compare changes](https://github.com/codevise/pageflow-progress-navigation-bar/compare/1-3-stable...v1.4.0)
 
 - Support for configurable sharing providers
   ([#41](https://github.com/codevise/pageflow-progress-navigation-bar/pull/41))
