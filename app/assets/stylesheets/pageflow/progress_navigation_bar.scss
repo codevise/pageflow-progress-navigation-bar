@@ -4,14 +4,7 @@ $nav-color: #9c9c9c;
 $nav-hint-color: #A9A9A9;
 $nav-hint-hover-color: #b4c552;
 
-$nav-dot-even: #afafaf;
-$nav-dot-odd: #afafaf;
-
 $nav-button-hr: #6f6f6f;
-
-$nav-active-page: #b4c552;
-$nav-active-chapter-beginning: #879438;
-$nav-active-chapter: #6D772E;
 
 $progressbar-mobile-width: 14px;
 
@@ -423,17 +416,11 @@ $progressbar-mobile-width: 14px;
           left: 0;
           height: 100%;
           width: 100%;
-          background-color: $nav-dot-even;
           border-bottom: 1px solid $bg-color;
           @include box-sizing(border-box);
 
-          &.in_active_chapter {
-            background-color: $nav-active-chapter;
-          }
-
           &.active {
             cursor: default;
-            background-color: $nav-active-page;
 
             img {
               border-left: 5px solid #A6D513;
@@ -441,27 +428,9 @@ $progressbar-mobile-width: 14px;
           }
         }
 
-        li.chapter_beginning a {
-          background-color: $nav-color;
-
-          &.in_active_chapter {
-            background-color: $nav-active-chapter-beginning;
-          }
-        }
-
         img {
           display: block;
         }
-      }
-    }
-
-    &.no_chapters ul.navigation_dots li.chapter_beginning a,
-    &.no_chapters ul.navigation_dots li a.in_active_chapter,
-    .scroller ul.navigation_dots li.chapter_beginning a.in_active_chapter {
-      background-color: $nav-dot-even;
-
-      &.active {
-        background-color: $nav-active-page;
       }
     }
 
