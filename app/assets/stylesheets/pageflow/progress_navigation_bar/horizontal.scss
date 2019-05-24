@@ -6,6 +6,7 @@ $thumbnail-small-width: 50px;
   left: 0;
   height: 30px;
   width: 100%;
+  z-index: 2;
 
   @include pageflow-progress-mobile-variant {
     height: $progressbar-mobile-width;
