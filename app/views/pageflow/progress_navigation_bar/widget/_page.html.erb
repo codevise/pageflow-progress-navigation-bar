@@ -12,7 +12,7 @@
     <% end %>
     <%= page.title %>
     <div class="thumbnail is_<%= page.template %>">
-      <%= image_tag('', data: {src: asset_path(page.thumbnail_url(:navigation_thumbnail_large))}) %>
+      <%= image_tag('', data: {src: asset_path(page_thumbnail_url(page, :navigation_thumbnail_large))}) %>
     </div>
   </div>
 <% end %>
