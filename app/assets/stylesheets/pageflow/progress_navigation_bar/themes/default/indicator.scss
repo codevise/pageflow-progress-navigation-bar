@@ -1,0 +1,16 @@
+/// Images to use as indicator to expand navigation bar.
+///
+/// Possible values:
+///
+/// - `"default"`: Use default image.
+/// - `"custom"`: Use `progress_navigation_bar/indicator.png` from
+///   current theme directory.
+$progress-navigation-bar-indicator-image: "default" !default;
+
+&::before {
+  @if $progress-navigation-bar-indicator-image == "custom" {
+    background-image: image-url("pageflow/themes/#{$theme-name}/progress_navigation_bar/indicator.png");
+  } @else {
+    background-image: image-url("pageflow/progress_navigation_bar/indicator.png");
+  }
+}

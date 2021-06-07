@@ -65,7 +65,6 @@ $progressbar-mobile-width: 14px;
     display: block;
     width: 28px;
     height: 28px;
-    background-image: image-url('pageflow/progress_navigation_bar/indicator.png');
     position: absolute;
     right: 60px;
     @include transition(opacity 0.3s linear);
