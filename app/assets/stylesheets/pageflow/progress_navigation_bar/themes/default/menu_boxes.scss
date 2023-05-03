@@ -44,7 +44,7 @@ $progress-navigation-bar-pictogram-visibility: $standard-page-pictogram-visibili
   }
 
   @if $progress-navigation-bar-menu-box-chapter-number-visibility == hidden {
-    .chapter_number {
+    .chapter > .chapter_number {
       display: none;
     }
   }
