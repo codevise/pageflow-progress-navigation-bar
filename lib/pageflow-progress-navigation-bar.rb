@@ -1,4 +1,5 @@
 require 'pageflow/progress_navigation_bar/engine'
+require 'pageflow/progress_navigation_bar/version'
 
 module Pageflow
   module ProgressNavigationBar
